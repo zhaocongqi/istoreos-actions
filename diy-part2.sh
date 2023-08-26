@@ -76,14 +76,22 @@ mkdir package/community
 pushd package/community
 
 # 系统相关应用
+#Cpufreq
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-cpufreq
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-lib-mac-vendor
+#Fan
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fan
 #Poweroff
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-poweroff
-#fileassistant
+#Diskman
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-diskman
+#Fileassistant
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant
-#guest-wifi
+#Guest-wifi
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi
 #Onliner (need luci-app-nlbwmon)
-svn export https://github.com/rufengsuixing/luci-app-onliner/trunk luci-app-onliner
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-onliner
+#svn export https://github.com/rufengsuixing/luci-app-onliner/trunk luci-app-onliner
 #Eqos
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-eqos
 #Wolplus
@@ -146,7 +154,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-socat
 svn export https://github.com/kiddin9/openwrt-packages/trunk/UnblockNeteaseMusic
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-unblockneteasemusic
 #OpenAppFilter
-#svn export https://github.com/destan19/OpenAppFilter/trunk OpenAppFilter
+svn export https://github.com/destan19/OpenAppFilter/trunk OpenAppFilter
 
 # 5G通信模组拨号工具
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-usbmodem
