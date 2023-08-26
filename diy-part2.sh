@@ -161,10 +161,10 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-usbmodem
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-pcimodem
 
 # 5G模组短信插件
-# svn export https://github.com/dwj0/luci-app-sms-tool/trunk/sms-tool package/community/sms-tool
-# svn export https://github.com/dwj0/luci-app-sms-tool/trunk/luci-app-sms-tool package/community/luci-app-sms-tool
-# svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/general/applications/luci-app-sms-tool temp/luci-app-sms-tool
-# cp -rf temp/luci-app-sms-tool/* package/community/luci-app-sms-tool
+svn export https://github.com/dwj0/luci-app-sms-tool/trunk/sms-tool
+svn export https://github.com/dwj0/luci-app-sms-tool/trunk/luci-app-sms-tool
+svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/general/applications/luci-app-sms-tool temp/luci-app-sms-tool
+cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
 
 popd
 
