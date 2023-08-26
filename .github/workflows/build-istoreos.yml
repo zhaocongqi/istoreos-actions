@@ -120,7 +120,11 @@ jobs:
         [ -e $CONFIG_FILE_PATH ] && mv $CONFIG_FILE_PATH openwrt/$CONFIG_FILE
         chmod +x $DIY_P2_SH
         cd openwrt
+        find -name diskman
+        echo "*****开始"
         $GITHUB_WORKSPACE/$DIY_P2_SH
+        echo "*****结束"
+        ls
 
     - name: SSH 连接到 Actions
       uses: P3TERX/ssh2actions@v1.0.0
