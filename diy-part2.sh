@@ -77,17 +77,17 @@ pushd package/community
 
 # 系统相关应用
 #Poweroff
-# svn export https://github.com/kiddin9/small-package/trunk/luci-app-poweroff
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-poweroff
 #fileassistant
-svn export https://github.com/kiddin9/small-package/trunk/luci-app-fileassistant
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant
 #guest-wifi
-svn export https://github.com/kiddin9/small-package/trunk/luci-app-guest-wifi
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi
 #Onliner (need luci-app-nlbwmon)
 svn export https://github.com/rufengsuixing/luci-app-onliner/trunk luci-app-onliner
 #Eqos
-svn export https://github.com/kiddin9/small-package/trunk/luci-app-eqos
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-eqos
 #Wolplus
-svn export https://github.com/kiddin9/small-package/trunk/luci-app-wolplus
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wolplus
 
 # 存储相关应用
 # svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-gowebdav
@@ -141,15 +141,16 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhom
 
 # 其他
 #Socat
-svn export https://github.com/kiddin9/small-package/trunk/luci-app-socat
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-socat
 #Unblockneteasemusic
 svn export https://github.com/kiddin9/openwrt-packages/trunk/UnblockNeteaseMusic
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-unblockneteasemusic
 #OpenAppFilter
 svn export https://github.com/destan19/OpenAppFilter/trunk OpenAppFilter
 
-# 修复移远PCIe驱动(quectel_MHI)
-svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_MHI package/wwan/driver/quectel_MHI
+# 5G通信模组拨号工具
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-usbmodem
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-pcimodem
 
 # 5G模组短信插件
 # svn export https://github.com/dwj0/luci-app-sms-tool/trunk/sms-tool package/community/sms-tool
