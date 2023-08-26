@@ -81,23 +81,24 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-cpufreq
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-lib-mac-vendor
 #Fan
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fan
-#Poweroff
+#Poweroff（iStoreOS已有）
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-poweroff
 #Diskman
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-diskman
-#Fileassistant
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant
+#Fileassistant（iStoreOS已有）
+#svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant
 #Guest-wifi
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi
 #Onliner (need luci-app-nlbwmon)
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-onliner
 #svn export https://github.com/rufengsuixing/luci-app-onliner/trunk luci-app-onliner
-#Eqos
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-eqos
+#Eqos（iStoreOS已有）
+#svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-eqos
 #Wolplus
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wolplus
 
 # 存储相关应用
+# Gowebdav（iStoreOS已有）
 # svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-gowebdav
 
 # 科学上网和代理应用
@@ -147,9 +148,13 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhom
 # svn export https://github.com/kenzok8/small-package/trunk/smartdns
 # svn export https://github.com/kenzok8/small-package/trunk/luci-app-smartdns
 
+#内网穿透
+#Zerotier（iStoreOS已有）
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-zerotier
+
 # 其他
-#Socat
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-socat
+#Socat（iStoreOS已有）
+#svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-socat
 #Unblockneteasemusic
 svn export https://github.com/kiddin9/openwrt-packages/trunk/UnblockNeteaseMusic
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-unblockneteasemusic
