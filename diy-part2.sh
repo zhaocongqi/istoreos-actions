@@ -146,7 +146,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-socat
 svn export https://github.com/kiddin9/openwrt-packages/trunk/UnblockNeteaseMusic
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-unblockneteasemusic
 #OpenAppFilter
-svn export https://github.com/destan19/OpenAppFilter/trunk OpenAppFilter
+#svn export https://github.com/destan19/OpenAppFilter/trunk OpenAppFilter
 
 # 5G通信模组拨号工具
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-usbmodem
