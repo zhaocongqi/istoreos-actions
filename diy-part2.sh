@@ -71,21 +71,261 @@ sed -i 's/CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y/CONFIG_PACKAGE_luci-i18n-ddnst
 # 移除 bootstrap 主题
 sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootstrap=n/' .config
 
-# Add application
+# 添加第三方应用
 mkdir package/community
 pushd package/community
 
+# 系统相关应用
+#Poweroff
+# svn export https://github.com/kiddin9/small-package/trunk/luci-app-poweroff
+#fileassistant
+svn export https://github.com/kiddin9/small-package/trunk/luci-app-fileassistant
+#guest-wifi
+svn export https://github.com/kiddin9/small-package/trunk/luci-app-guest-wifi
+#Onliner (need luci-app-nlbwmon)
+svn export https://github.com/rufengsuixing/luci-app-onliner/trunk luci-app-onliner
+#Eqos
+svn export https://github.com/kiddin9/small-package/trunk/luci-app-eqos
+#Wolplus
+svn export https://github.com/kiddin9/small-package/trunk/luci-app-wolplus
+
+# 存储相关应用
+# svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-gowebdav
+
+# 科学上网和代理应用
+#SSR
+svn export https://github.com/fw876/helloworld/trunk helloworld
+#Passwall和Passwall2
+svn export https://github.com/xiaorouji/openwrt-passwall/trunk openwrt-passwall
+svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
+svn export https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2
+#VSSR（Hello Word）
+svn export https://github.com/jerrykuku/lua-maxminddb/trunk lua-maxminddb
+svn export https://github.com/jerrykuku/luci-app-vssr/trunk luci-app-vssr
 #OpenClash
 svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
 svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/general/applications/luci-app-openclash temp/luci-app-openclash
 cp -rf temp/luci-app-openclash/* luci-app-openclash
 
+# 去广告
+#ADGuardHome
+svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome
+# svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/general/applications/luci-app-adguardhome temp/luci-app-adguardhome
+# cp -rf temp/luci-app-adguardhome/* luci-app-adguardhome
+#dnsfilter
+# svn export https://github.com/kenzok8/small-package/trunk/luci-app-dnsfilter
+#ikoolproxy
+# svn export https://github.com/kenzok8/small-package/trunk/luci-app-ikoolproxy
+
+# docker应用
+# svn export https://github.com/kenzok8/small-package/trunk/luci-app-filebrowser
+# rm -rf ../../customfeeds/luci/applications/luci-app-kodexplorer
+# svn export https://github.com/kenzok8/small-package/trunk/luci-app-kodexplorer
+# rm -rf ../../customfeeds/packages/utils/verysync
+# rm -rf ../../customfeeds/luci/applications/luci-app-verysync
+# svn export https://github.com/kenzok8/small-package/trunk/verysync
+# svn export https://github.com/kenzok8/small-package/trunk/luci-app-verysync
+
+# VPN服务器
+# svn export https://github.com/kenzok8/small-package/trunk/luci-app-ssr-mudb-server
+# svn export https://github.com/kenzok8/small-package/trunk/luci-app-ipsec-server
+# svn export https://github.com/kenzok8/small-package/trunk/luci-app-pptp-server
+# svn export https://github.com/kenzok8/small-package/trunk/luci-app-softethervpn
+
+# DNS
+# svn export https://github.com/kenzok8/small-package/trunk/mosdns
+# svn export https://github.com/kenzok8/small-package/trunk/luci-app-mosdns
+# svn export https://github.com/kenzok8/small-package/trunk/smartdns
+# svn export https://github.com/kenzok8/small-package/trunk/luci-app-smartdns
+
+# 其他
+#Socat
+svn export https://github.com/kiddin9/small-package/trunk/luci-app-socat
+#Unblockneteasemusic
+svn export https://github.com/kiddin9/openwrt-packages/trunk/UnblockNeteaseMusic
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-unblockneteasemusic
+#OpenAppFilter
+svn export https://github.com/destan19/OpenAppFilter/trunk OpenAppFilter
+
+# 修复移远PCIe驱动(quectel_MHI)
+svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_MHI package/wwan/driver/quectel_MHI
+
+# 5G模组短信插件
+# svn export https://github.com/dwj0/luci-app-sms-tool/trunk/sms-tool package/community/sms-tool
+# svn export https://github.com/dwj0/luci-app-sms-tool/trunk/luci-app-sms-tool package/community/luci-app-sms-tool
+# svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/general/applications/luci-app-sms-tool temp/luci-app-sms-tool
+# cp -rf temp/luci-app-sms-tool/* package/community/luci-app-sms-tool
+
 popd
+
+# 5G模组拨号脚本
+mkdir -p package/base-files/files/root/5GModem
+cp -rf $GITHUB_WORKSPACE/tools/5G模组拨号脚本/5GModem/* package/base-files/files/root/5GModem
+chmod -R a+x package/base-files/files/root/5GModem
+svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/general/etc/crontabs package/base-files/files/etc/crontabs
 
 # 添加第三方应用
 echo "
+# 系统相关应用
+CONFIG_PACKAGE_luci-app-poweroff=y
+CONFIG_PACKAGE_luci-i18n-poweroff-zh-cn=y
+CONFIG_PACKAGE_luci-app-fileassistant=y
+CONFIG_PACKAGE_luci-app-guest-wifi=y
+CONFIG_PACKAGE_luci-app-onliner=y
+CONFIG_PACKAGE_luci-app-eqos=y
+# CONFIG_PACKAGE_luci-app-wolplus=y
+
+# 存储相关应用
+# CONFIG_PACKAGE_luci-app-gowebdav=y
+
+# 科学上网和代理应用
+#SSR
+CONFIG_PACKAGE_luci-app-ssr-plus=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NONE_V2RAY=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_V2ray=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_Xray=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_Kcptun=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_Hysteria=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_IPT2Socks=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_NaiveProxy=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_Redsocks2=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Client=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Client=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Client=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Server=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Server=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Server=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Simple_Obfs=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_V2ray_Plugin=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Client=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Server=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
+
+#Passwall和Passwall2
+CONFIG_PACKAGE_luci-app-passwall2=y
+CONFIG_PACKAGE_luci-app-passwall=y
+CONFIG_PACKAGE_luci-app-passwall_Transparent_Proxy=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_IPv6_Nat=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Kcptun=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_NaiveProxy=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Client=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Server=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Client=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Server=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Client=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Server=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_GO=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_Plus=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray_Plugin=y
+CONFIG_PACKAGE_luci-app-haproxy-tcp=y
+
+#VSSR（HelloWord）
+CONFIG_PACKAGE_luci-app-vssr=y
+CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Xray=y
+CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Trojan=y
+CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Kcptun=y
+CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Xray_plugin=y
+CONFIG_PACKAGE_luci-app-vssr_INCLUDE_ShadowsocksR_Server=y
+
 #Openclash
 CONFIG_PACKAGE_luci-app-openclash=y
+
+#Tiny
+#CONFIG_PACKAGE_luci-app-tinyproxy=y
+
+# 去广告应用
+CONFIG_PACKAGE_luci-app-adguardhome=y
+# CONFIG_PACKAGE_luci-app-dnsfilter=y
+# CONFIG_PACKAGE_luci-app-ikoolproxy=y
+
+# docker应用
+# CONFIG_PACKAGE_luci-app-aliyundrive-webdav=y
+# CONFIG_PACKAGE_luci-app-aria2=y
+# CONFIG_PACKAGE_luci-app-transmission=y
+# CONFIG_PACKAGE_luci-app-qbittorrent=y
+# CONFIG_PACKAGE_luci-app-qbittorrent_static=y
+# CONFIG_PACKAGE_luci-app-alist=y
+# CONFIG_PACKAGE_luci-app-filebrowser=y
+# CONFIG_PACKAGE_luci-app-familycloud=y
+# CONFIG_PACKAGE_luci-app-kodexplorer=y
+# CONFIG_PACKAGE_luci-app-rclone=y
+
+# 局域网分享应用
+CONFIG_PACKAGE_luci-app-minidlna=y
+CONFIG_PACKAGE_luci-app-airplay2=y
+CONFIG_PACKAGE_luci-app-shairplay=y
+CONFIG_PACKAGE_luci-app-music-remote-center=y
+CONFIG_PACKAGE_luci-app-mjpg-streamer=y
+CONFIG_PACKAGE_luci-app-ps3netsrv=y
+CONFIG_PACKAGE_luci-app-usb-printer=y
+
+# VPN服务器
+# CONFIG_PACKAGE_luci-app-brook-server=y
+# CONFIG_PACKAGE_luci-app-ssr-mudb-server=y
+# CONFIG_PACKAGE_luci-app-trojan-server=y
+# CONFIG_PACKAGE_luci-app-openvpn-server=y
+# CONFIG_PACKAGE_luci-app-pptp-server=y
+# CONFIG_PACKAGE_luci-app-softethervpn=y
+
+# DNS
+# CONFIG_PACKAGE_luci-app-mosdns=y
+# CONFIG_PACKAGE_luci-app-smartdns=y
+
+# DDNS
+# CONFIG_PACKAGE_luci-app-aliddns=y
+# CONFIG_PACKAGE_luci-app-tencentddns=y
+
+# 内网穿透
+CONFIG_PACKAGE_luci-app-zerotier=y
+# CONFIG_PACKAGE_luci-app-frpc=y
+# CONFIG_PACKAGE_luci-app-frps=y
+# CONFIG_PACKAGE_luci-app-nps=y
+# CONFIG_PACKAGE_luci-app-n2n_v2=y
+
+# 其他
+CONFIG_PACKAGE_luci-app-pushbot=y
+CONFIG_PACKAGE_luci-app-socat=y
+CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
+CONFIG_PACKAGE_luci-app-uugamebooster=y
+CONFIG_PACKAGE_luci-app-wifischedule=y
+CONFIG_PACKAGE_luci-app-xlnetacc=y
+CONFIG_PACKAGE_luci-udptools=y
+
+# 5G模组信号插件
+# CONFIG_PACKAGE_ext-rooter-basic=y
+
+# 5G模组短信插件
+CONFIG_PACKAGE_luci-app-sms-tool=y
+
+# QMI拨号工具（移远，广和通）
+CONFIG_PACKAGE_quectel-CM-5G=y
+CONFIG_PACKAGE_fibocom-dial=y
+
+# QMI拨号软件
+# CONFIG_PACKAGE_kmod-qmi_wwan_f=y
+CONFIG_PACKAGE_luci-app-usbmodem=y
+CONFIG_PACKAGE_luci-app-pcimodem=y
+
+# Gobinet拨号软件
+# CONFIG_PACKAGE_kmod-gobinet=y
+# CONFIG_PACKAGE_luci-app-gobinetmodem=y
+
+# 串口调试工具
+CONFIG_PACKAGE_minicom=y
+
+# 脚本拨号工具依赖
+CONFIG_PACKAGE_grep=y
+CONFIG_PACKAGE_procps-ng=y
+CONFIG_PACKAGE_procps-ng-ps=y
 " >> .config
 
 
