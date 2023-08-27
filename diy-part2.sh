@@ -266,6 +266,59 @@ CONFIG_PACKAGE_luci-app-adguardhome=y
 # CONFIG_PACKAGE_luci-app-dnsfilter=y
 # CONFIG_PACKAGE_luci-app-ikoolproxy=y
 
+# docker应用
+# CONFIG_PACKAGE_luci-app-aliyundrive-webdav=y
+# CONFIG_PACKAGE_luci-app-aria2=y
+# CONFIG_PACKAGE_luci-app-transmission=y
+# CONFIG_PACKAGE_luci-app-qbittorrent=y
+# CONFIG_PACKAGE_luci-app-qbittorrent_static=y
+# CONFIG_PACKAGE_luci-app-alist=y
+# CONFIG_PACKAGE_luci-app-filebrowser=y
+# CONFIG_PACKAGE_luci-app-familycloud=y
+# CONFIG_PACKAGE_luci-app-kodexplorer=y
+# CONFIG_PACKAGE_luci-app-rclone=y
+
+# 局域网分享应用
+CONFIG_PACKAGE_luci-app-minidlna=y
+CONFIG_PACKAGE_luci-app-airplay2=y
+CONFIG_PACKAGE_luci-app-shairplay=y
+CONFIG_PACKAGE_luci-app-music-remote-center=y
+CONFIG_PACKAGE_luci-app-mjpg-streamer=y
+CONFIG_PACKAGE_luci-app-ps3netsrv=y
+CONFIG_PACKAGE_luci-app-usb-printer=y
+
+# VPN服务器
+# CONFIG_PACKAGE_luci-app-brook-server=y
+# CONFIG_PACKAGE_luci-app-ssr-mudb-server=y
+# CONFIG_PACKAGE_luci-app-trojan-server=y
+# CONFIG_PACKAGE_luci-app-openvpn-server=y
+# CONFIG_PACKAGE_luci-app-pptp-server=y
+# CONFIG_PACKAGE_luci-app-softethervpn=y
+
+# DNS
+# CONFIG_PACKAGE_luci-app-mosdns=y
+# CONFIG_PACKAGE_luci-app-smartdns=y
+
+# DDNS
+# CONFIG_PACKAGE_luci-app-aliddns=y
+# CONFIG_PACKAGE_luci-app-tencentddns=y
+
+# 内网穿透
+CONFIG_PACKAGE_luci-app-zerotier=y
+# CONFIG_PACKAGE_luci-app-frpc=y
+# CONFIG_PACKAGE_luci-app-frps=y
+# CONFIG_PACKAGE_luci-app-nps=y
+# CONFIG_PACKAGE_luci-app-n2n_v2=y
+
+# 其他
+CONFIG_PACKAGE_luci-app-pushbot=y
+CONFIG_PACKAGE_luci-app-socat=y
+CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
+CONFIG_PACKAGE_luci-app-uugamebooster=y
+CONFIG_PACKAGE_luci-app-wifischedule=y
+CONFIG_PACKAGE_luci-app-xlnetacc=y
+CONFIG_PACKAGE_luci-udptools=y
+
 # 5G模组信号插件
 # CONFIG_PACKAGE_ext-rooter-basic=y
 
