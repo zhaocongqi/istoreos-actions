@@ -162,6 +162,11 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-unblocknet
 svn export https://github.com/destan19/OpenAppFilter/trunk OpenAppFilter
 
 # 5G通信模组拨号工具
+svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_QMI_WWAN
+svn export https://github.com/Siriling/5G-Modem-Support/trunk/fibocom_QMI_WWAN
+svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_MHI
+svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_cm_5G
+svn export https://github.com/Siriling/5G-Modem-Support/trunk/fibocom-dial
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-usbmodem
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-pcimodem
 
@@ -321,8 +326,8 @@ CONFIG_PACKAGE_luci-udptools=y
 CONFIG_PACKAGE_luci-app-sms-tool=y
 
 # QMI拨号工具（移远，广和通）
-CONFIG_PACKAGE_quectel-CM-5G=y
-CONFIG_PACKAGE_fibocom-dial=y
+# CONFIG_PACKAGE_quectel-CM-5G=y
+# CONFIG_PACKAGE_fibocom-dial=y
 
 # QMI拨号软件
 # CONFIG_PACKAGE_kmod-qmi_wwan_f=y
