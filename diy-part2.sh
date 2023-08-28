@@ -161,28 +161,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-unblocknet
 #OpenAppFilter（conf已有）
 # svn export https://github.com/destan19/OpenAppFilter/trunk OpenAppFilter
 
-# 5G通信模组拨号工具
-svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_QMI_WWAN
-svn export https://github.com/Siriling/5G-Modem-Support/trunk/fibocom_QMI_WWAN
-svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_MHI
-svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_cm_5G
-svn export https://github.com/Siriling/5G-Modem-Support/trunk/fibocom-dial
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-usbmodem
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-pcimodem
-
-# 5G模组短信插件
-svn export https://github.com/dwj0/luci-app-sms-tool/trunk/sms-tool
-svn export https://github.com/dwj0/luci-app-sms-tool/trunk/luci-app-sms-tool
-svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/general/applications/luci-app-sms-tool temp/luci-app-sms-tool
-cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
-
 popd
-
-# 5G模组拨号脚本
-mkdir -p package/base-files/files/root/5GModem
-cp -rf $GITHUB_WORKSPACE/tools/5G模组拨号脚本/5GModem/* package/base-files/files/root/5GModem
-chmod -R a+x package/base-files/files/root/5GModem
-svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/general/etc/crontabs package/base-files/files/etc/crontabs
 
 # 添加第三方应用
 echo "
