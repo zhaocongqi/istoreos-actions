@@ -76,15 +76,15 @@ mkdir package/community
 pushd package/community
 
 # 系统相关应用
-#Cpufreq
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-cpufreq
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-lib-mac-vendor
-#Fan
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fan
+#Cpufreq（conf已有）
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-cpufreq
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-lib-mac-vendor
+#Fan（conf已有）
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fan
 #Poweroff（iStoreOS已有）
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-poweroff
-#Diskman
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-diskman
+#Diskman（conf已有）
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-diskman
 #Fileassistant（iStoreOS已有）
 #svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant
 #Guest-wifi
@@ -158,8 +158,8 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhom
 #Unblockneteasemusic
 svn export https://github.com/kiddin9/openwrt-packages/trunk/UnblockNeteaseMusic
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-unblockneteasemusic
-#OpenAppFilter
-svn export https://github.com/destan19/OpenAppFilter/trunk OpenAppFilter
+#OpenAppFilter（conf已有）
+# svn export https://github.com/destan19/OpenAppFilter/trunk OpenAppFilter
 
 # 5G通信模组拨号工具
 svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_QMI_WWAN
@@ -186,18 +186,6 @@ svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/general/et
 
 # 添加第三方应用
 echo "
-# 系统相关应用
-CONFIG_PACKAGE_luci-app-poweroff=y
-CONFIG_PACKAGE_luci-i18n-poweroff-zh-cn=y
-CONFIG_PACKAGE_luci-app-fileassistant=y
-CONFIG_PACKAGE_luci-app-guest-wifi=y
-CONFIG_PACKAGE_luci-app-onliner=y
-CONFIG_PACKAGE_luci-app-eqos=y
-# CONFIG_PACKAGE_luci-app-wolplus=y
-
-# 存储相关应用
-# CONFIG_PACKAGE_luci-app-gowebdav=y
-
 # 科学上网和代理应用
 #SSR
 CONFIG_PACKAGE_luci-app-ssr-plus=y
@@ -257,94 +245,6 @@ CONFIG_PACKAGE_luci-app-vssr_INCLUDE_ShadowsocksR_Server=y
 
 #Openclash
 CONFIG_PACKAGE_luci-app-openclash=y
-
-#Tiny
-#CONFIG_PACKAGE_luci-app-tinyproxy=y
-
-# 去广告应用
-CONFIG_PACKAGE_luci-app-adguardhome=y
-# CONFIG_PACKAGE_luci-app-dnsfilter=y
-# CONFIG_PACKAGE_luci-app-ikoolproxy=y
-
-# docker应用
-# CONFIG_PACKAGE_luci-app-aliyundrive-webdav=y
-# CONFIG_PACKAGE_luci-app-aria2=y
-# CONFIG_PACKAGE_luci-app-transmission=y
-# CONFIG_PACKAGE_luci-app-qbittorrent=y
-# CONFIG_PACKAGE_luci-app-qbittorrent_static=y
-# CONFIG_PACKAGE_luci-app-alist=y
-# CONFIG_PACKAGE_luci-app-filebrowser=y
-# CONFIG_PACKAGE_luci-app-familycloud=y
-# CONFIG_PACKAGE_luci-app-kodexplorer=y
-# CONFIG_PACKAGE_luci-app-rclone=y
-
-# 局域网分享应用
-CONFIG_PACKAGE_luci-app-minidlna=y
-CONFIG_PACKAGE_luci-app-airplay2=y
-CONFIG_PACKAGE_luci-app-shairplay=y
-CONFIG_PACKAGE_luci-app-music-remote-center=y
-CONFIG_PACKAGE_luci-app-mjpg-streamer=y
-CONFIG_PACKAGE_luci-app-ps3netsrv=y
-CONFIG_PACKAGE_luci-app-usb-printer=y
-
-# VPN服务器
-# CONFIG_PACKAGE_luci-app-brook-server=y
-# CONFIG_PACKAGE_luci-app-ssr-mudb-server=y
-# CONFIG_PACKAGE_luci-app-trojan-server=y
-# CONFIG_PACKAGE_luci-app-openvpn-server=y
-# CONFIG_PACKAGE_luci-app-pptp-server=y
-# CONFIG_PACKAGE_luci-app-softethervpn=y
-
-# DNS
-# CONFIG_PACKAGE_luci-app-mosdns=y
-# CONFIG_PACKAGE_luci-app-smartdns=y
-
-# DDNS
-# CONFIG_PACKAGE_luci-app-aliddns=y
-# CONFIG_PACKAGE_luci-app-tencentddns=y
-
-# 内网穿透
-CONFIG_PACKAGE_luci-app-zerotier=y
-# CONFIG_PACKAGE_luci-app-frpc=y
-# CONFIG_PACKAGE_luci-app-frps=y
-# CONFIG_PACKAGE_luci-app-nps=y
-# CONFIG_PACKAGE_luci-app-n2n_v2=y
-
-# 其他
-CONFIG_PACKAGE_luci-app-pushbot=y
-CONFIG_PACKAGE_luci-app-socat=y
-CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
-CONFIG_PACKAGE_luci-app-uugamebooster=y
-CONFIG_PACKAGE_luci-app-wifischedule=y
-CONFIG_PACKAGE_luci-app-xlnetacc=y
-CONFIG_PACKAGE_luci-udptools=y
-
-# 5G模组信号插件
-# CONFIG_PACKAGE_ext-rooter-basic=y
-
-# 5G模组短信插件
-CONFIG_PACKAGE_luci-app-sms-tool=y
-
-# QMI拨号工具（移远，广和通）
-# CONFIG_PACKAGE_quectel-CM-5G=y
-# CONFIG_PACKAGE_fibocom-dial=y
-
-# QMI拨号软件
-# CONFIG_PACKAGE_kmod-qmi_wwan_f=y
-CONFIG_PACKAGE_luci-app-usbmodem=y
-CONFIG_PACKAGE_luci-app-pcimodem=y
-
-# Gobinet拨号软件
-# CONFIG_PACKAGE_kmod-gobinet=y
-# CONFIG_PACKAGE_luci-app-gobinetmodem=y
-
-# 串口调试工具
-CONFIG_PACKAGE_minicom=y
-
-# 脚本拨号工具依赖
-CONFIG_PACKAGE_grep=y
-CONFIG_PACKAGE_procps-ng=y
-CONFIG_PACKAGE_procps-ng-ps=y
 " >> .config
 
 
