@@ -276,13 +276,13 @@ CONFIG_PACKAGE_luci-app-adguardhome=y
 # CONFIG_PACKAGE_luci-app-rclone=y
 
 # 局域网分享应用
-CONFIG_PACKAGE_luci-app-minidlna=y
-CONFIG_PACKAGE_luci-app-airplay2=y
-CONFIG_PACKAGE_luci-app-shairplay=y
-CONFIG_PACKAGE_luci-app-music-remote-center=y
-CONFIG_PACKAGE_luci-app-mjpg-streamer=y
-CONFIG_PACKAGE_luci-app-ps3netsrv=y
-CONFIG_PACKAGE_luci-app-usb-printer=y
+# CONFIG_PACKAGE_luci-app-minidlna=y
+# CONFIG_PACKAGE_luci-app-airplay2=y
+# CONFIG_PACKAGE_luci-app-shairplay=y
+# CONFIG_PACKAGE_luci-app-music-remote-center=y
+# CONFIG_PACKAGE_luci-app-mjpg-streamer=y
+# CONFIG_PACKAGE_luci-app-ps3netsrv=y
+# CONFIG_PACKAGE_luci-app-usb-printer=y
 
 # VPN服务器
 # CONFIG_PACKAGE_luci-app-brook-server=y
@@ -308,13 +308,13 @@ CONFIG_PACKAGE_luci-app-zerotier=y
 # CONFIG_PACKAGE_luci-app-n2n_v2=y
 
 # 其他
-CONFIG_PACKAGE_luci-app-pushbot=y
-CONFIG_PACKAGE_luci-app-socat=y
-CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
-CONFIG_PACKAGE_luci-app-uugamebooster=y
-CONFIG_PACKAGE_luci-app-wifischedule=y
-CONFIG_PACKAGE_luci-app-xlnetacc=y
-CONFIG_PACKAGE_luci-udptools=y
+# CONFIG_PACKAGE_luci-app-pushbot=y
+# CONFIG_PACKAGE_luci-app-socat=y
+# CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
+# CONFIG_PACKAGE_luci-app-uugamebooster=y
+# CONFIG_PACKAGE_luci-app-wifischedule=y
+# CONFIG_PACKAGE_luci-app-xlnetacc=y
+# CONFIG_PACKAGE_luci-udptools=y
 " >> .config
 
 #5G相关
