@@ -188,11 +188,11 @@ popd
 echo "
 # 系统相关应用
 CONFIG_PACKAGE_luci-app-poweroff=y
-CONFIG_PACKAGE_luci-i18n-poweroff-zh-cn=y
-CONFIG_PACKAGE_luci-app-fileassistant=y
-CONFIG_PACKAGE_luci-app-guest-wifi=y
-CONFIG_PACKAGE_luci-app-onliner=y
-CONFIG_PACKAGE_luci-app-eqos=y
+# CONFIG_PACKAGE_luci-i18n-poweroff-zh-cn=y
+# CONFIG_PACKAGE_luci-app-fileassistant=y
+# CONFIG_PACKAGE_luci-app-guest-wifi=y
+# CONFIG_PACKAGE_luci-app-onliner=y
+# CONFIG_PACKAGE_luci-app-eqos=y
 # CONFIG_PACKAGE_luci-app-wolplus=y
 
 # 存储相关应用
