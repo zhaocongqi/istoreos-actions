@@ -178,7 +178,7 @@ jobs:
       id: tag
       run: |
         echo "release_date=$(date +"%Y.%m.%d")" >> $GITHUB_OUTPUT
-        echo "release_tag=${{ steps.tag.outputs.release_date }}-${{ matrix.ARCHITECTURE }}" >> $GITHUB_OUTPUT
+        echo "release_tag=${{ steps.tag.outputs.release_date }}+"-"+${{ matrix.ARCHITECTURE }}" >> $GITHUB_OUTPUT
         echo "::set-output name=release_tag::📦‍ 固件下载 | ${{ steps.tag.outputs.release_date }}"
         touch release.txt
         echo "
