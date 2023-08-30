@@ -178,7 +178,7 @@ jobs:
       id: tag
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H.%M")"
+        echo "::set-output name=release_tag::📦‍ 固件下载 | $(date +"%Y.%m.%d-%H:%M")"
         touch release.txt
         echo "
         💻 架构: ${{ matrix.ARCHITECTURE }}
