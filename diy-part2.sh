@@ -301,7 +301,7 @@ CONFIG_PACKAGE_luci-app-adguardhome=y
 # CONFIG_PACKAGE_luci-app-tencentddns=y
 
 # 内网穿透
-# CONFIG_PACKAGE_luci-app-zerotier=y
+CONFIG_PACKAGE_luci-app-zerotier=y
 # CONFIG_PACKAGE_luci-app-frpc=y
 # CONFIG_PACKAGE_luci-app-frps=y
 # CONFIG_PACKAGE_luci-app-nps=y
@@ -309,8 +309,8 @@ CONFIG_PACKAGE_luci-app-adguardhome=y
 
 # 其他
 # CONFIG_PACKAGE_luci-app-pushbot=y
-# CONFIG_PACKAGE_luci-app-socat=y
-# CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
+CONFIG_PACKAGE_luci-app-socat=y
+CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
 # CONFIG_PACKAGE_luci-app-uugamebooster=y
 # CONFIG_PACKAGE_luci-app-wifischedule=y
 # CONFIG_PACKAGE_luci-app-xlnetacc=y
