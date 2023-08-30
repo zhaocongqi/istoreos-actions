@@ -178,6 +178,7 @@ jobs:
       id: tag
       run: |
         echo "release_date=$(date +"%Y.%m.%d")" >> $GITHUB_OUTPUT
+        echo "release_tag=${{ steps.tag.outputs.release_date }}-${{ matrix.ARCHITECTURE }}" >> $GITHUB_OUTPUT
         echo "::set-output name=release_tag::📦‍ 固件下载 | ${{ steps.tag.outputs.release_date }}"
         touch release.txt
         echo "
@@ -199,7 +200,7 @@ jobs:
     - name: 自动发布固件到 Releases
       uses: softprops/action-gh-release@v1
       with:
-        tag_name: ${{ steps.tag.outputs.release_date }}+"-"+${{ matrix.ARCHITECTURE }}
+        tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
 
