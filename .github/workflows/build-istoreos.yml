@@ -176,7 +176,6 @@ jobs:
 
     - name: 生成发布标签
       id: tag
-      # if: steps.compile.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
         echo "::set-output name=release_tag::📦‍ 固件下载 | $(date +"%Y.%m.%d-%H:%M")"
         touch release.txt
