@@ -200,7 +200,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       if: steps.tag.outputs.status == 'success' && !cancelled()
       with:
-        tag_name: $(date +"%Y.%m.%d-%H:%M"
+        tag_name: $(date +"%Y.%m.%d-%H:%M")
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
 
