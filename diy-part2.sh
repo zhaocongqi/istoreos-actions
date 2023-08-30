@@ -187,12 +187,12 @@ popd
 # 添加第三方应用
 echo "
 # 系统相关应用
-# CONFIG_PACKAGE_luci-app-poweroff=y
-# CONFIG_PACKAGE_luci-i18n-poweroff-zh-cn=y
-# CONFIG_PACKAGE_luci-app-fileassistant=y
-# CONFIG_PACKAGE_luci-app-guest-wifi=y
-# CONFIG_PACKAGE_luci-app-onliner=y
-# CONFIG_PACKAGE_luci-app-eqos=y
+CONFIG_PACKAGE_luci-app-poweroff=y
+CONFIG_PACKAGE_luci-i18n-poweroff-zh-cn=y
+CONFIG_PACKAGE_luci-app-fileassistant=y
+CONFIG_PACKAGE_luci-app-guest-wifi=y
+CONFIG_PACKAGE_luci-app-onliner=y
+CONFIG_PACKAGE_luci-app-eqos=y
 # CONFIG_PACKAGE_luci-app-wolplus=y
 
 # 存储相关应用
@@ -256,7 +256,7 @@ echo "
 # CONFIG_PACKAGE_luci-app-vssr_INCLUDE_ShadowsocksR_Server=y
 
 #Openclash
-# CONFIG_PACKAGE_luci-app-openclash=y
+CONFIG_PACKAGE_luci-app-openclash=y
 
 # 去广告应用
 CONFIG_PACKAGE_luci-app-adguardhome=y
