@@ -199,7 +199,7 @@ jobs:
     - name: 自动发布固件到 Releases
       uses: softprops/action-gh-release@v1
       with:
-        tag_name: ${{ steps.tag.outputs.release_time }}${{ matrix.ARCHITECTURE }}
+        tag_name: ${{ steps.tag.outputs.release_time }}-${{ matrix.ARCHITECTURE }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
 
