@@ -179,7 +179,7 @@ jobs:
       run: |
         echo "::set-output name=release_time::$(date +"%Y.%m.%d-%H:%M")"
         echo "::set-output name=release_tag::📦‍ 固件下载 | $(date +"%Y.%m.%d-%H:%M")"
-        echo "::set-output name=release_tag_name::$(date +"%Y.%m.%d-%H:%M")-${{ matrix.ARCHITECTURE }}"
+        echo "::set-output name=release_tag_name::$(date +"%Y.%m.%d-%H:%M")${{ matrix.ARCHITECTURE }}"
         touch release.txt
         echo "
         💻 架构: ${{ matrix.ARCHITECTURE }}
