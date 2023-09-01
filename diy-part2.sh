@@ -248,7 +248,7 @@ CONFIG_PACKAGE_luci-app-ssr-plus=y
 # CONFIG_PACKAGE_luci-app-haproxy-tcp=y
 
 #VSSR（HelloWord）
-CONFIG_PACKAGE_luci-app-vssr=y
+# CONFIG_PACKAGE_luci-app-vssr=y
 # CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Xray=y
 # CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Trojan=y
 # CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Kcptun=y
@@ -301,7 +301,7 @@ CONFIG_PACKAGE_luci-app-adguardhome=y
 # CONFIG_PACKAGE_luci-app-tencentddns=y
 
 # 内网穿透
-CONFIG_PACKAGE_luci-app-zerotier=y
+# CONFIG_PACKAGE_luci-app-zerotier=y
 # CONFIG_PACKAGE_luci-app-frpc=y
 # CONFIG_PACKAGE_luci-app-frps=y
 # CONFIG_PACKAGE_luci-app-nps=y
