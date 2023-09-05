@@ -200,7 +200,7 @@ CONFIG_PACKAGE_luci-app-eqos=y
 
 # 科学上网和代理应用
 #SSR
-CONFIG_PACKAGE_luci-app-ssr-plus=y
+# CONFIG_PACKAGE_luci-app-ssr-plus=y
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NONE_V2RAY=y
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_V2ray=y
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_Xray=y
@@ -248,7 +248,7 @@ CONFIG_PACKAGE_luci-app-ssr-plus=y
 # CONFIG_PACKAGE_luci-app-haproxy-tcp=y
 
 #VSSR（HelloWord）
-# CONFIG_PACKAGE_luci-app-vssr=y
+CONFIG_PACKAGE_luci-app-vssr=y
 # CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Xray=y
 # CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Trojan=y
 # CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Kcptun=y
