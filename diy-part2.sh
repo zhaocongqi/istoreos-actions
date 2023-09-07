@@ -171,10 +171,10 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-unblocknet
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-pcimodem
 
 # 5G模组短信插件
-# svn export https://github.com/dwj0/luci-app-sms-tool/trunk/sms-tool
-# svn export https://github.com/dwj0/luci-app-sms-tool/trunk/luci-app-sms-tool
-# svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/general/applications/luci-app-sms-tool temp/luci-app-sms-tool
-# cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
+svn export https://github.com/dwj0/luci-app-sms-tool/trunk/sms-tool
+svn export https://github.com/dwj0/luci-app-sms-tool/trunk/luci-app-sms-tool
+svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/general/applications/luci-app-sms-tool temp/luci-app-sms-tool
+cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
 
 popd
 
@@ -318,31 +318,31 @@ CONFIG_PACKAGE_luci-app-uugamebooster=y
 " >> .config
 
 #5G相关
-# echo "
-# # 5G模组信号插件
-# # CONFIG_PACKAGE_ext-rooter-basic=y
+echo "
+# 5G模组信号插件
+# CONFIG_PACKAGE_ext-rooter-basic=y
 
-# # 5G模组短信插件
-# CONFIG_PACKAGE_luci-app-sms-tool=y
+# 5G模组短信插件
+CONFIG_PACKAGE_luci-app-sms-tool=y
 
-# # QMI拨号工具（移远，广和通）
-# # CONFIG_PACKAGE_quectel-CM-5G=y
-# # CONFIG_PACKAGE_fibocom-dial=y
+# QMI拨号工具（移远，广和通）
+# CONFIG_PACKAGE_quectel-CM-5G=y
+# CONFIG_PACKAGE_fibocom-dial=y
 
-# # QMI拨号软件
-# # CONFIG_PACKAGE_kmod-qmi_wwan_f=y
+# QMI拨号软件
+# CONFIG_PACKAGE_kmod-qmi_wwan_f=y
 # CONFIG_PACKAGE_luci-app-usbmodem=y
 # CONFIG_PACKAGE_luci-app-pcimodem=y
 
-# # Gobinet拨号软件
-# # CONFIG_PACKAGE_kmod-gobinet=y
-# # CONFIG_PACKAGE_luci-app-gobinetmodem=y
+# Gobinet拨号软件
+# CONFIG_PACKAGE_kmod-gobinet=y
+# CONFIG_PACKAGE_luci-app-gobinetmodem=y
 
-# # 串口调试工具
-# CONFIG_PACKAGE_minicom=y
+# 串口调试工具
+CONFIG_PACKAGE_minicom=y
 
-# # 脚本拨号工具依赖
-# CONFIG_PACKAGE_grep=y
-# CONFIG_PACKAGE_procps-ng=y
-# CONFIG_PACKAGE_procps-ng-ps=y
-# " >> .config
+# 脚本拨号工具依赖
+CONFIG_PACKAGE_grep=y
+CONFIG_PACKAGE_procps-ng=y
+CONFIG_PACKAGE_procps-ng-ps=y
+" >> .config
