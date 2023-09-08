@@ -345,4 +345,7 @@ CONFIG_PACKAGE_minicom=y
 CONFIG_PACKAGE_grep=y
 CONFIG_PACKAGE_procps-ng=y
 CONFIG_PACKAGE_procps-ng-ps=y
+
+#工具
+pciutils
 " >> .config
