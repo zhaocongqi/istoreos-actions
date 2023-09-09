@@ -319,7 +319,7 @@ CONFIG_PACKAGE_luci-app-uugamebooster=y
 #5G相关
 echo "
 # 5G模组信号插件
-CONFIG_PACKAGE_ext-rooter-basic=y
+# CONFIG_PACKAGE_ext-rooter-basic=y
 
 # 5G模组短信插件
 CONFIG_PACKAGE_luci-app-sms-tool=y
@@ -330,7 +330,7 @@ CONFIG_PACKAGE_luci-app-sms-tool=y
 
 # QMI拨号软件
 # CONFIG_PACKAGE_kmod-qmi_wwan_f=y
-# CONFIG_PACKAGE_luci-app-usbmodem=y
+CONFIG_PACKAGE_luci-app-usbmodem=y
 CONFIG_PACKAGE_luci-app-pcimodem=y
 
 # Gobinet拨号软件
