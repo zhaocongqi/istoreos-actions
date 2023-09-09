@@ -162,13 +162,12 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-unblocknet
 # svn export https://github.com/destan19/OpenAppFilter/trunk OpenAppFilter
 
 # 5G通信模组拨号工具
-# svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_QMI_WWAN
-# svn export https://github.com/Siriling/5G-Modem-Support/trunk/fibocom_QMI_WWAN
-# svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_MHI
-# svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_cm_5G
-# svn export https://github.com/Siriling/5G-Modem-Support/trunk/fibocom-dial
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-usbmodem
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-pcimodem
+svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_QMI_WWAN
+svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_cm_5G
+svn export https://github.com/xiaoxifu64/immortalwrt/trunk/package/quectel_MHI
+svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-usbmodem
+svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-pcimodem
+svn export https://github.com/Siriling/5G-Modem-Support/trunk/rooter
 
 # 5G模组短信插件
 svn export https://github.com/dwj0/luci-app-sms-tool/trunk/sms-tool
@@ -176,11 +175,6 @@ svn export https://github.com/dwj0/luci-app-sms-tool/trunk/luci-app-sms-tool
 svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/general/applications/luci-app-sms-tool temp/luci-app-sms-tool
 cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
 
-# 5G相关驱动
-svn export https://github.com/Siriling/5G-Modem-Support/trunk Modem-Support
-svn export https://github.com/xiaoxifu64/immortalwrt/trunk/package/quectel_MHI temp/Modem-Support
-cp -rf temp/quectel_MHI/* Modem-Support/quectel_MHI
-rm -rf Modem-Support/fibocom_MHI
 popd
 
 # 5G模组拨号脚本
