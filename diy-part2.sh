@@ -180,6 +180,7 @@ cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
 svn export https://github.com/Siriling/5G-Modem-Support/trunk Modem-Support
 svn export https://github.com/xiaoxifu64/immortalwrt/trunk/package/quectel_MHI temp/Modem-Support
 cp -rf temp/quectel_MHI/* Modem-Support/quectel_MHI
+rm -rf Modem-Support/fibocom_MHI
 popd
 
 # 5G模组拨号脚本
