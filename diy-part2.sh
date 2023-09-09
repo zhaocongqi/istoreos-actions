@@ -176,6 +176,10 @@ svn export https://github.com/dwj0/luci-app-sms-tool/trunk/luci-app-sms-tool
 svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/general/applications/luci-app-sms-tool temp/luci-app-sms-tool
 cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
 
+# 5G相关驱动
+svn export https://github.com/Siriling/5G-Modem-Support/trunk Modem-Support
+svn export https://github.com/xiaoxifu64/immortalwrt/trunk/package/quectel_MHI temp/Modem-Support
+cp -rf temp/quectel_MHI/* Modem-Support/quectel_MHI
 popd
 
 # 5G模组拨号脚本
@@ -320,7 +324,7 @@ CONFIG_PACKAGE_luci-app-uugamebooster=y
 #5G相关
 echo "
 # 5G模组信号插件
-# CONFIG_PACKAGE_ext-rooter-basic=y
+CONFIG_PACKAGE_ext-rooter-basic=y
 
 # 5G模组短信插件
 CONFIG_PACKAGE_luci-app-sms-tool=y
@@ -332,7 +336,7 @@ CONFIG_PACKAGE_luci-app-sms-tool=y
 # QMI拨号软件
 # CONFIG_PACKAGE_kmod-qmi_wwan_f=y
 # CONFIG_PACKAGE_luci-app-usbmodem=y
-# CONFIG_PACKAGE_luci-app-pcimodem=y
+CONFIG_PACKAGE_luci-app-pcimodem=y
 
 # Gobinet拨号软件
 # CONFIG_PACKAGE_kmod-gobinet=y
@@ -345,7 +349,4 @@ CONFIG_PACKAGE_minicom=y
 CONFIG_PACKAGE_grep=y
 CONFIG_PACKAGE_procps-ng=y
 CONFIG_PACKAGE_procps-ng-ps=y
-
-#工具
-pciutils
 " >> .config
