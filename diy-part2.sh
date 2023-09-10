@@ -178,6 +178,8 @@ cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
 
 # 5G模组信息插件
 svn export https://github.com/qiuweichao/luci-app-modem-info/trunk/luci-app-3ginfo-lite
+# svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/3ginfo
+# svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/luci-app-3ginfo
 popd
 
 # 5G模组拨号脚本
@@ -329,6 +331,7 @@ CONFIG_PACKAGE_luci-app-sms-tool=y
 
 # 5G模组信息插件
 CONFIG_PACKAGE_luci-app-3ginfo-lite=y
+# CONFIG_PACKAGE_luci-app-3ginfo=y
 
 # QMI拨号工具（移远，广和通）
 # CONFIG_PACKAGE_quectel-CM-5G=y
