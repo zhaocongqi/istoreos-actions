@@ -168,7 +168,7 @@ svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_cm_5G
 svn export https://github.com/xiaoxifu64/immortalwrt/trunk/package/quectel_MHI
 svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-usbmodem
 svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-pcimodem
-svn export https://github.com/Siriling/5G-Modem-Support/trunk/rooter
+# svn export https://github.com/Siriling/5G-Modem-Support/trunk/rooter
 
 # 5G模组短信插件
 svn export https://github.com/dwj0/luci-app-sms-tool/trunk/sms-tool
@@ -176,6 +176,8 @@ svn export https://github.com/dwj0/luci-app-sms-tool/trunk/luci-app-sms-tool
 svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/applications/luci-app-sms-tool temp/luci-app-sms-tool
 cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
 
+# 5G模组信息插件
+svn export https://github.com/qiuweichao/luci-app-modem-info/trunk/luci-app-3ginfo-lite
 popd
 
 # 5G模组拨号脚本
@@ -324,6 +326,9 @@ echo "
 
 # 5G模组短信插件
 CONFIG_PACKAGE_luci-app-sms-tool=y
+
+# 5G模组信息插件
+CONFIG_PACKAGE_luci-app-3ginfo-lite=y
 
 # QMI拨号工具（移远，广和通）
 # CONFIG_PACKAGE_quectel-CM-5G=y
