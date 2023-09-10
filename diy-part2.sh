@@ -113,15 +113,16 @@ svn export https://github.com/jerrykuku/lua-maxminddb/trunk lua-maxminddb
 svn export https://github.com/jerrykuku/luci-app-vssr/trunk luci-app-vssr
 #OpenClash
 svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
-svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/general/applications/luci-app-openclash temp/luci-app-openclash
+svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/applications/luci-app-openclash temp/luci-app-openclash
 cp -rf temp/luci-app-openclash/* luci-app-openclash
 
 # 去广告
 #ADGuardHome
 svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome
-# svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/general/applications/luci-app-adguardhome temp/luci-app-adguardhome
-# cp -rf temp/luci-app-adguardhome/* luci-app-adguardhome
+svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/applications/luci-app-adguardhome temp/luci-app-adguardhome
+cp -rf temp/luci-app-adguardhome/* luci-app-adguardhome
+sed -i 's/拦截DNS服务器/拦截DNS服务器，默认用户名和密码为root/' luci-app-adguardhome/po/zh_Hans/adguardhome.po
 #dnsfilter
 # svn export https://github.com/kenzok8/small-package/trunk/luci-app-dnsfilter
 #ikoolproxy
@@ -172,7 +173,7 @@ svn export https://github.com/Siriling/5G-Modem-Support/trunk/rooter
 # 5G模组短信插件
 svn export https://github.com/dwj0/luci-app-sms-tool/trunk/sms-tool
 svn export https://github.com/dwj0/luci-app-sms-tool/trunk/luci-app-sms-tool
-svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/general/applications/luci-app-sms-tool temp/luci-app-sms-tool
+svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/applications/luci-app-sms-tool temp/luci-app-sms-tool
 cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
 
 popd
@@ -181,7 +182,7 @@ popd
 # mkdir -p package/base-files/files/root/5GModem
 # cp -rf $GITHUB_WORKSPACE/tools/5G模组拨号脚本/5GModem/* package/base-files/files/root/5GModem
 # chmod -R a+x package/base-files/files/root/5GModem
-# svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/general/etc/crontabs package/base-files/files/etc/crontabs
+# svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/etc/crontabs package/base-files/files/etc/crontabs
 
 # 添加第三方应用
 echo "
