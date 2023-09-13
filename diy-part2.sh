@@ -177,7 +177,7 @@ svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/g
 cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
 
 # 5G模组信息插件
-svn export https://github.com/qiuweichao/luci-app-modem-info/trunk/luci-app-3ginfo-lite
+# svn export https://github.com/qiuweichao/luci-app-modem-info/trunk/luci-app-3ginfo-lite
 # svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/3ginfo
 # svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/luci-app-3ginfo
 popd
@@ -186,8 +186,8 @@ popd
 mkdir -p package/base-files/files/root/5GModem
 cp -rf $GITHUB_WORKSPACE/tools/5G模组拨号脚本/5GModem/* package/base-files/files/root/5GModem
 chmod -R a+x package/base-files/files/root/5GModem
-# svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/etc/crontabs package/base-files/files/etc/crontabs
-echo -e "* * * * * bash /root/5GModem/5g_crontab.sh" >> package/base-files/files/etc/crontabs/root
+svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/etc/crontabs package/base-files/files/etc/crontabs
+# echo -e "* * * * * bash /root/5GModem/5g_crontab.sh" >> package/base-files/files/etc/crontabs/root
 
 # 添加第三方应用
 echo "
@@ -331,7 +331,7 @@ echo "
 CONFIG_PACKAGE_luci-app-sms-tool=y
 
 # 5G模组信息插件
-CONFIG_PACKAGE_luci-app-3ginfo-lite=y
+# CONFIG_PACKAGE_luci-app-3ginfo-lite=y
 # CONFIG_PACKAGE_luci-app-3ginfo=y
 
 # QMI拨号工具（移远，广和通）
