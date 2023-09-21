@@ -117,12 +117,18 @@ svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/g
 cp -rf temp/luci-app-openclash/* luci-app-openclash
 
 # 去广告
-#ADGuardHome
-svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome
-svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/applications/luci-app-adguardhome temp/luci-app-adguardhome
+#ADGuardHome（kiddin9）
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome
+# svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/applications/luci-app-adguardhome temp/luci-app-adguardhome
+# cp -rf temp/luci-app-adguardhome/* luci-app-adguardhome
+# sed -i 's/拦截DNS服务器/拦截DNS服务器，默认用户名和密码均为root/' luci-app-adguardhome/po/zh_Hans/adguardhome.po
+#ADGuardHome（kenzok8）
+svn export https://github.com/kenzok8/openwrt-packages/trunk/adguardhome
+svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome
+svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/lede/general/applications/luci-app-adguardhome temp/luci-app-adguardhome
 cp -rf temp/luci-app-adguardhome/* luci-app-adguardhome
-sed -i 's/拦截DNS服务器/拦截DNS服务器，默认用户名和密码为root/' luci-app-adguardhome/po/zh_Hans/adguardhome.po
+sed -i 's/默认账号和密码均为：admin/默认用户名和密码均为root/' luci-app-adguardhome/po/zh-cn/AdGuardHome.po
 #dnsfilter
 # svn export https://github.com/kenzok8/small-package/trunk/luci-app-dnsfilter
 #ikoolproxy
