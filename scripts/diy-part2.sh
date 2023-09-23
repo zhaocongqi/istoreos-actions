@@ -116,6 +116,7 @@ svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
 svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/applications/luci-app-openclash temp/luci-app-openclash
 cp -rf temp/luci-app-openclash/* luci-app-openclash
 #加入OpenClash核心
+chmod -R a+x $GITHUB_WORKSPACE/scripts/preset-clash-core.sh
 $GITHUB_WORKSPACE/scripts/preset-clash-core.sh amd64
 
 # 去广告
