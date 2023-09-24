@@ -8,9 +8,10 @@
 # Blog: https://mlapp.cn
 #=================================================
 
-mkdir -p ../package/base-files/files/etc/openclash/core
-core_path="../package/base-files/files/etc/openclash/core"
-goe_path="../package/base-files/files/etc/openclash"
+echo -e "预置Clash内核"
+mkdir -p luci-app-openclash/root/etc/openclash/core
+core_path="luci-app-openclash/root/etc/openclash/core"
+goe_path="luci-app-openclash/root/etc/openclash"
 
 CLASH_DEV_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/dev/clash-linux-${1}.tar.gz"
 CLASH_TUN_URL=$(curl -fsSL https://api.github.com/repos/vernesong/OpenClash/contents/master/premium\?ref\=core | grep download_url | grep amd64 | awk -F '"' '{print $4}' | grep "v3" )
