@@ -176,8 +176,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-unblocknet
 svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_QMI_WWAN
 svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_cm_5G
 svn export https://github.com/xiaoxifu64/immortalwrt/trunk/package/quectel_MHI
-svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-usbmodem
-svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-pcimodem
+svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-hypermodem
 # svn export https://github.com/Siriling/5G-Modem-Support/trunk/rooter
 
 # 5G模组短信插件
