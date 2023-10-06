@@ -117,11 +117,11 @@ svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/g
 cp -rf temp/luci-app-openclash/* luci-app-openclash
 #加入OpenClash核心
 chmod -R a+x $GITHUB_WORKSPACE/scripts/preset-clash-core.sh
-if [ "${{ matrix.ARCHITECTURE }}" = "rk33xx" ]; then
+if [ "$1" = "rk33xx" ]; then
     $GITHUB_WORKSPACE/scripts/preset-clash-core.sh arm64
-elif [ "${{ matrix.ARCHITECTURE }}" = "rk35xx" ]; then
+elif [ "$1" = "rk35xx" ]; then
     $GITHUB_WORKSPACE/scripts/preset-clash-core.sh arm64
-elif [ "${{ matrix.ARCHITECTURE }}" = "x86" ]; then
+elif [ "$1" = "x86" ]; then
     $GITHUB_WORKSPACE/scripts/preset-clash-core.sh amd64
 fi
 echo -e "完成预置Clash内核"
