@@ -26,4 +26,3 @@ wget -qO- $GEOIP_URL > $goe_path/GeoIP.dat
 wget -qO- $GEOSITE_URL > $goe_path/GeoSite.dat
 
 chmod +x $core_path/clash*
-ls $core_path

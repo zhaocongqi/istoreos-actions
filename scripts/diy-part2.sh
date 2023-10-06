@@ -124,7 +124,6 @@ elif [ "$1" = "rk35xx" ]; then
 elif [ "$1" = "x86" ]; then
     $GITHUB_WORKSPACE/scripts/preset-clash-core.sh amd64
 fi
-echo -e "完成预置Clash内核"
 
 # 去广告
 #ADGuardHome（kiddin9）
