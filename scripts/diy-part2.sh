@@ -117,7 +117,15 @@ svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/g
 cp -rf temp/luci-app-openclash/* luci-app-openclash
 #加入OpenClash核心
 chmod -R a+x $GITHUB_WORKSPACE/scripts/preset-clash-core.sh
-$GITHUB_WORKSPACE/scripts/preset-clash-core.sh amd64
+if [ "${{ matrix.ARCHITECTURE }}" = "rk33xx" ]; then
+    $GITHUB_WORKSPACE/scripts/preset-clash-core.sh arm64
+elif [ "${{ matrix.ARCHITECTURE }}" = "rk35xx" ]; then
+    $GITHUB_WORKSPACE/scripts/preset-clash-core.sh arm64
+elif [ "${{ matrix.ARCHITECTURE }}" = "x86" ]; then
+    $GITHUB_WORKSPACE/scripts/preset-clash-core.sh amd64
+fi
+echo -e "完成预置Clash内核"
+ls $core_path
 
 # 去广告
 #ADGuardHome（kiddin9）
@@ -177,6 +185,7 @@ svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_QMI_WWAN
 svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_cm_5G
 svn export https://github.com/xiaoxifu64/immortalwrt/trunk/package/quectel_MHI
 svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-hypermodem
+chmod -R a+x luci-app-hypermodem/root/etc/init.d/*
 # svn export https://github.com/Siriling/5G-Modem-Support/trunk/rooter
 
 # 5G模组短信插件
