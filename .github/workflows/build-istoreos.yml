@@ -179,7 +179,6 @@ jobs:
       id: tag
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        # echo "::set-output name=release_tag::$(date +"%Y.%m.%d")-${{ matrix.ARCHITECTURE }}"
         echo "::set-output name=release_tag::${{ matrix.ARCHITECTURE }}"
         touch release.txt
         echo "
