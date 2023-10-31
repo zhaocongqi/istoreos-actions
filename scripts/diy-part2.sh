@@ -198,7 +198,7 @@ cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
 # svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/luci-app-3ginfo
 
 # 5G模组信息插件+AT工具
-svn export https://github.com/ouyangzq/sendat/trunk sendat
+svn export https://github.com/Beaverfffan/sendat/trunk sendat
 svn export https://github.com/Beaverfffan/luci-app-cpe/trunk luci-app-cpe
 popd
 
