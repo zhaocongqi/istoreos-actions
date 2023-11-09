@@ -127,18 +127,18 @@ fi
 
 # 去广告
 #ADGuardHome（kiddin9）
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome
-# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome
+svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome
 # svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/applications/luci-app-adguardhome temp/luci-app-adguardhome
 # cp -rf temp/luci-app-adguardhome/* luci-app-adguardhome
 # sed -i 's/拦截DNS服务器/拦截DNS服务器，默认用户名和密码均为root/' luci-app-adguardhome/po/zh_Hans/adguardhome.po
 #ADGuardHome（kenzok8）
-svn export https://github.com/kenzok8/openwrt-packages/trunk/adguardhome
-svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome
-svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/lede/general/applications/luci-app-adguardhome temp/luci-app-adguardhome
-cp -rf temp/luci-app-adguardhome/* luci-app-adguardhome
-sed -i 's/默认账号和密码均为：admin/默认用户名和密码均为root/' luci-app-adguardhome/po/zh-cn/AdGuardHome.po
-sed -i 's/网页管理账号和密码:admin ,端口:/端口/' luci-app-adguardhome/po/zh-cn/AdGuardHome.po
+# svn export https://github.com/kenzok8/openwrt-packages/trunk/adguardhome
+# svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome
+# svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/lede/general/applications/luci-app-adguardhome temp/luci-app-adguardhome
+# cp -rf temp/luci-app-adguardhome/* luci-app-adguardhome
+# sed -i 's/默认账号和密码均为：admin/默认用户名和密码均为root/' luci-app-adguardhome/po/zh-cn/AdGuardHome.po
+# sed -i 's/网页管理账号和密码:admin ,端口:/端口/' luci-app-adguardhome/po/zh-cn/AdGuardHome.po
 #dnsfilter
 # svn export https://github.com/kenzok8/small-package/trunk/luci-app-dnsfilter
 #ikoolproxy
@@ -198,8 +198,8 @@ cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
 # svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/luci-app-3ginfo
 
 # 5G模组信息插件+AT工具
-svn export https://github.com/Beaverfffan/sendat/trunk sendat
-svn export https://github.com/Beaverfffan/luci-app-cpe/trunk luci-app-cpe
+svn export https://github.com/Siriling/5G-Modem-Support/trunk/sendat
+svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-cpe
 popd
 
 # 5G模组拨号脚本
