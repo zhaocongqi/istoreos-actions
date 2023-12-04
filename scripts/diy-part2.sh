@@ -356,6 +356,7 @@ CONFIG_PACKAGE_luci-app-sms-tool=y
 
 # 5G模组信息插件+AT工具
 CONFIG_PACKAGE_luci-app-cpe=y
+CONFIG_PACKAGE_sendat=y
 
 # QMI拨号工具（移远，广和通）
 # CONFIG_PACKAGE_quectel-CM-5G=y
