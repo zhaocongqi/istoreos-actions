@@ -198,8 +198,10 @@ cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
 # svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/luci-app-3ginfo
 
 # 5G模组信息插件+AT工具
-svn export https://github.com/Siriling/5G-Modem-Support/trunk/sendat
-svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-cpe
+# svn export https://github.com/Siriling/5G-Modem-Support/trunk/sendat
+# svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-cpe
+# svn export https://github.com/dwj0/luci-app-sms-tool/trunk/sms-tool
+svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-modem
 popd
 
 # 5G模组拨号脚本
