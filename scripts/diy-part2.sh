@@ -127,7 +127,7 @@ fi
 
 # 去广告
 #ADGuardHome（kiddin9）
-svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome
 # svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/applications/luci-app-adguardhome temp/luci-app-adguardhome
 # cp -rf temp/luci-app-adguardhome/* luci-app-adguardhome
