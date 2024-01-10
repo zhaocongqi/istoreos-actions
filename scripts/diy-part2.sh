@@ -206,11 +206,9 @@ svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-modem
 popd
 
 # 5G模组拨号脚本
-mkdir -p package/base-files/files/root/5GModem
-cp -rf $GITHUB_WORKSPACE/tools/5G模组拨号脚本/5GModem/* package/base-files/files/root/5GModem
-chmod -R a+x package/base-files/files/root/5GModem
-# svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/etc/crontabs package/istoreos-files/files/etc/crontabs
-echo -e "#* * * * * bash /root/5GModem/5g_crontab.sh" >> package/istoreos-files/files/etc/crontabs/root
+# mkdir -p package/base-files/files/root/5GModem
+# cp -rf $GITHUB_WORKSPACE/tools/5G模组拨号脚本/5GModem/* package/base-files/files/root/5GModem
+# echo -e "#* * * * * bash /root/5GModem/5g_crontab.sh" >> package/istoreos-files/files/etc/crontabs/root
 
 # 添加第三方应用
 echo "
