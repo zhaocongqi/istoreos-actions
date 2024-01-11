@@ -72,6 +72,21 @@ sed -i 's/CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y/CONFIG_PACKAGE_luci-i18n-ddnst
 sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootstrap=n/' .config
 
 # 添加第三方应用
+mkdir kiddin9
+pushd kiddin9
+git clone --depth=1 https://github.com/kiddin9/openwrt-packages .
+popd
+
+mkdir Modem-Support
+pushd Modem-Support
+git clone --depth=1 https://github.com/Siriling/5G-Modem-Support .
+popd
+
+mkdir MyConfig
+pushd MyConfig
+git clone --depth=1 https://github.com/Siriling/OpenWRT-MyConfig .
+popd
+
 mkdir package/community
 pushd package/community
 
@@ -88,9 +103,11 @@ pushd package/community
 #Fileassistant（iStoreOS已有）
 #svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant
 #Guest-wifi
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi
+cp -rf ../../kiddin9/luci-app-guest-wifi/* luci-app-guest-wifi
 #Onliner (need luci-app-nlbwmon)
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-onliner
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-onliner
+cp -rf ../../kiddin9/luci-app-onliner/* luci-app-onliner
 #svn export https://github.com/rufengsuixing/luci-app-onliner/trunk luci-app-onliner
 #Eqos（iStoreOS已有）
 #svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-eqos
@@ -103,18 +120,23 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-onliner
 
 # 科学上网和代理应用
 #SSR
-svn export https://github.com/fw876/helloworld/trunk helloworld
+# svn export https://github.com/fw876/helloworld/trunk helloworld
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ssr-plus
+# cp -rf ../../kiddin9/luci-app-ssr-plus/* luci-app-ssr-plus
 #Passwall和Passwall2
 # svn export https://github.com/xiaorouji/openwrt-passwall/trunk openwrt-passwall
 # svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
 # svn export https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2
 #VSSR（Hello Word）
-svn export https://github.com/jerrykuku/lua-maxminddb/trunk lua-maxminddb
-svn export https://github.com/jerrykuku/luci-app-vssr/trunk luci-app-vssr
+# svn export https://github.com/jerrykuku/lua-maxminddb/trunk lua-maxminddb
+# svn export https://github.com/jerrykuku/luci-app-vssr/trunk luci-app-vssr
 #OpenClash
-svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
-svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/applications/luci-app-openclash temp/luci-app-openclash
-cp -rf temp/luci-app-openclash/* luci-app-openclash
+# svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
+# svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/applications/luci-app-openclash temp/luci-app-openclash
+# cp -rf temp/luci-app-openclash/* luci-app-openclash
+
+cp -rf ../../kiddin9/luci-app-openclash/* luci-app-openclash
+cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-openclash/* luci-app-openclash
 #加入OpenClash核心
 chmod -R a+x $GITHUB_WORKSPACE/scripts/preset-clash-core.sh
 if [ "$1" = "rk33xx" ]; then
@@ -128,7 +150,8 @@ fi
 # 去广告
 #ADGuardHome（kiddin9）
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome
+cp -rf ../../kiddin9/luci-app-adguardhome/* luci-app-adguardhome
 # svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/applications/luci-app-adguardhome temp/luci-app-adguardhome
 # cp -rf temp/luci-app-adguardhome/* luci-app-adguardhome
 # sed -i 's/拦截DNS服务器/拦截DNS服务器，默认用户名和密码均为root/' luci-app-adguardhome/po/zh_Hans/adguardhome.po
@@ -174,24 +197,31 @@ sed -i 's/+PACKAGE_$(PKG_NAME)_INCLUDE_binary:adguardhome//' luci-app-adguardhom
 #Socat（iStoreOS已有）
 #svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-socat
 #Unblockneteasemusic
-svn export https://github.com/kiddin9/openwrt-packages/trunk/UnblockNeteaseMusic
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-unblockneteasemusic
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/UnblockNeteaseMusic
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-unblockneteasemusic
+cp -rf ../../kiddin9/UnblockNeteaseMusic/* UnblockNeteaseMusic
+cp -rf ../../kiddin9/luci-app-unblockneteasemusic/* luci-app-unblockneteasemusic
 #OpenAppFilter（conf已有）
 # svn export https://github.com/destan19/OpenAppFilter/trunk OpenAppFilter
 
 # 5G通信模组拨号工具
-svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_QMI_WWAN
-svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_cm_5G
-svn export https://github.com/xiaoxifu64/immortalwrt/trunk/package/quectel_MHI
-svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-hypermodem
-chmod -R a+x luci-app-hypermodem/root/etc/init.d/*
-# svn export https://github.com/Siriling/5G-Modem-Support/trunk/rooter
+# svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_QMI_WWAN
+# svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_cm_5G
+# svn export https://github.com/xiaoxifu64/immortalwrt/trunk/package/quectel_MHI
+# svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-hypermodem
+cp -rf ../../Modem-Support/quectel_QMI_WWAN/* quectel_QMI_WWAN
+cp -rf ../../Modem-Support/quectel_cm_5G/* quectel_cm_5G
+cp -rf ../../Modem-Support/quectel_MHI/* quectel_MHI
+cp -rf ../../Modem-Support/luci-app-hypermodem/* luci-app-hypermodem
 
 # 5G模组短信插件
-svn export https://github.com/dwj0/luci-app-sms-tool/trunk/sms-tool
-svn export https://github.com/dwj0/luci-app-sms-tool/trunk/luci-app-sms-tool
-svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/applications/luci-app-sms-tool temp/luci-app-sms-tool
-cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
+# svn export https://github.com/dwj0/luci-app-sms-tool/trunk/sms-tool
+# svn export https://github.com/dwj0/luci-app-sms-tool/trunk/luci-app-sms-tool
+# svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/applications/luci-app-sms-tool temp/luci-app-sms-tool
+# cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
+cp -rf ../../Modem-Support/sms-tool/* sms-tool
+cp -rf ../../Modem-Support/luci-app-sms-tool/* luci-app-sms-tool
+cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-sms-tool/* luci-app-sms-tool
 
 # 5G模组信息插件
 # svn export https://github.com/qiuweichao/luci-app-modem-info/trunk/luci-app-3ginfo-lite
@@ -202,7 +232,8 @@ cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
 # svn export https://github.com/Siriling/5G-Modem-Support/trunk/sendat
 # svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-cpe
 # svn export https://github.com/dwj0/luci-app-sms-tool/trunk/sms-tool
-svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-modem
+# svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-modem
+cp -rf ../../Modem-Support/luci-app-modem/* luci-app-modem
 popd
 
 # 5G模组拨号脚本
