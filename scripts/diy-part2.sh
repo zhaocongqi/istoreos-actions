@@ -89,6 +89,9 @@ popd
 
 mkdir package/community
 pushd package/community
+
+echo "-------"
+ls ../../
 echo "aaa"
 ls ../../kiddin9
 echo "bbb"
