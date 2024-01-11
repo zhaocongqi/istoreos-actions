@@ -89,7 +89,9 @@ popd
 
 mkdir package/community
 pushd package/community
-
+echo "aaa"
+ls ../../kiddin9
+echo "bbb"
 # 系统相关应用
 #Cpufreq（conf已有）
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-cpufreq
