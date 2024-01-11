@@ -90,11 +90,6 @@ popd
 mkdir package/community
 pushd package/community
 
-echo "-------"
-ls ../../
-echo "aaa"
-ls ../../kiddin9
-echo "bbb"
 # 系统相关应用
 #Cpufreq（conf已有）
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-cpufreq
@@ -109,9 +104,11 @@ echo "bbb"
 #svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant
 #Guest-wifi
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi
+mkdir luci-app-guest-wifi
 cp -rf ../../kiddin9/luci-app-guest-wifi/* luci-app-guest-wifi
 #Onliner (need luci-app-nlbwmon)
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-onliner
+mkdir luci-app-onliner
 cp -rf ../../kiddin9/luci-app-onliner/* luci-app-onliner
 #svn export https://github.com/rufengsuixing/luci-app-onliner/trunk luci-app-onliner
 #Eqos（iStoreOS已有）
@@ -139,7 +136,7 @@ cp -rf ../../kiddin9/luci-app-onliner/* luci-app-onliner
 # svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
 # svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/applications/luci-app-openclash temp/luci-app-openclash
 # cp -rf temp/luci-app-openclash/* luci-app-openclash
-
+mkdir luci-app-openclash
 cp -rf ../../kiddin9/luci-app-openclash/* luci-app-openclash
 cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-openclash/* luci-app-openclash
 #加入OpenClash核心
@@ -156,6 +153,7 @@ fi
 #ADGuardHome（kiddin9）
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome
+mkdir luci-app-adguardhome
 cp -rf ../../kiddin9/luci-app-adguardhome/* luci-app-adguardhome
 # svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/applications/luci-app-adguardhome temp/luci-app-adguardhome
 # cp -rf temp/luci-app-adguardhome/* luci-app-adguardhome
@@ -204,6 +202,8 @@ sed -i 's/+PACKAGE_$(PKG_NAME)_INCLUDE_binary:adguardhome//' luci-app-adguardhom
 #Unblockneteasemusic
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/UnblockNeteaseMusic
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-unblockneteasemusic
+mkdir UnblockNeteaseMusic
+mkdir luci-app-unblockneteasemusic
 cp -rf ../../kiddin9/UnblockNeteaseMusic/* UnblockNeteaseMusic
 cp -rf ../../kiddin9/luci-app-unblockneteasemusic/* luci-app-unblockneteasemusic
 #OpenAppFilter（conf已有）
@@ -214,6 +214,10 @@ cp -rf ../../kiddin9/luci-app-unblockneteasemusic/* luci-app-unblockneteasemusic
 # svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_cm_5G
 # svn export https://github.com/xiaoxifu64/immortalwrt/trunk/package/quectel_MHI
 # svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-hypermodem
+mkdir quectel_QMI_WWAN
+mkdir quectel_cm_5G
+mkdir quectel_MHI
+mkdir luci-app-hypermodem
 cp -rf ../../Modem-Support/quectel_QMI_WWAN/* quectel_QMI_WWAN
 cp -rf ../../Modem-Support/quectel_cm_5G/* quectel_cm_5G
 cp -rf ../../Modem-Support/quectel_MHI/* quectel_MHI
@@ -224,6 +228,8 @@ cp -rf ../../Modem-Support/luci-app-hypermodem/* luci-app-hypermodem
 # svn export https://github.com/dwj0/luci-app-sms-tool/trunk/luci-app-sms-tool
 # svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/applications/luci-app-sms-tool temp/luci-app-sms-tool
 # cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
+mkdir sms-tool
+mkdir luci-app-sms-tool
 cp -rf ../../Modem-Support/sms-tool/* sms-tool
 cp -rf ../../Modem-Support/luci-app-sms-tool/* luci-app-sms-tool
 cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-sms-tool/* luci-app-sms-tool
@@ -238,6 +244,7 @@ cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-sms-tool/* 
 # svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-cpe
 # svn export https://github.com/dwj0/luci-app-sms-tool/trunk/sms-tool
 # svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-modem
+mkdir luci-app-modem
 cp -rf ../../Modem-Support/luci-app-modem/* luci-app-modem
 popd
 
