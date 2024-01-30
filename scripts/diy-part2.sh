@@ -258,7 +258,6 @@ popd
 echo "
 # 系统相关应用
 CONFIG_PACKAGE_luci-app-poweroff=y
-CONFIG_PACKAGE_luci-i18n-poweroff-zh-cn=y
 CONFIG_PACKAGE_luci-app-fileassistant=y
 CONFIG_PACKAGE_luci-app-guest-wifi=y
 CONFIG_PACKAGE_luci-app-onliner=y
@@ -271,7 +270,6 @@ CONFIG_PACKAGE_luci-app-eqos=y
 # 科学上网和代理应用
 #SSR
 CONFIG_PACKAGE_luci-app-ssr-plus=y
-CONFIG_PACKAGE_luci-i18n-ssr-plus-zh-cn=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Client=y
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Client is not set
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Client is not set
@@ -299,7 +297,6 @@ CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Server=n
 #Passwall和Passwall2
 # CONFIG_PACKAGE_luci-app-passwall2=y
 CONFIG_PACKAGE_luci-app-passwall=y
-CONFIG_PACKAGE_luci-i18n-passwall-zh-cn=y
 # CONFIG_PACKAGE_luci-app-passwall_Transparent_Proxy=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
