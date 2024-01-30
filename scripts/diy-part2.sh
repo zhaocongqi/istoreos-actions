@@ -48,6 +48,7 @@ sed -i 's/CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y/CONFIG_PACKAGE_luci-i18n-ddnst
 # sed -i 's/CONFIG_PACKAGE_iwlwifi-firmware-ax200=y/CONFIG_PACKAGE_iwlwifi-firmware-ax200=n/' .config
 # sed -i 's/CONFIG_PACKAGE_iwlwifi-firmware-ax201=y/CONFIG_PACKAGE_iwlwifi-firmware-ax201=n/' .config
 # sed -i 's/CONFIG_PACKAGE_iwlwifi-firmware-ax210=y/CONFIG_PACKAGE_iwlwifi-firmware-ax210=n/' .config
+# sed -i 's/CONFIG_PACKAGE_iwlwifi-firmware-ax211=y/CONFIG_PACKAGE_iwlwifi-firmware-ax211=n/' .config
 
 # sed -i 's/CONFIG_PACKAGE_kmod-rtl8192c-common=y/CONFIG_PACKAGE_kmod-rtl8192c-common=n/' .config
 # sed -i 's/CONFIG_PACKAGE_kmod-rtl8192cu=y/CONFIG_PACKAGE_kmod-rtl8192cu=n/' .config
@@ -269,30 +270,36 @@ CONFIG_PACKAGE_luci-app-eqos=y
 
 # 科学上网和代理应用
 #SSR
-# CONFIG_PACKAGE_luci-app-ssr-plus=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NONE_V2RAY=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_V2ray=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_Xray=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_Kcptun=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_Hysteria=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_IPT2Socks=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_NaiveProxy=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_Redsocks2=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Client=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Client=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Client=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Server=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Server=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Server=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Simple_Obfs=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_V2ray_Plugin=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Client=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Server=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
+CONFIG_PACKAGE_luci-app-ssr-plus=y
+CONFIG_PACKAGE_luci-i18n-ssr-plus-zh-cn=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Client=y
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Client is not set
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Server=y
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Server is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Server is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NONE_V2RAY is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray is not set
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ChinaDNS_NG is not set
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_MosDNS=n
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Hysteria is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Tuic_Client is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadow_TLS is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_IPT2Socks is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NaiveProxy is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Redsocks2 is not set
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Simple_Obfs=n
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_V2ray_Plugin=n
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Client=n
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Server=n
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan is not set
 
 #Passwall和Passwall2
 # CONFIG_PACKAGE_luci-app-passwall2=y
-# CONFIG_PACKAGE_luci-app-passwall=y
+CONFIG_PACKAGE_luci-app-passwall=y
+CONFIG_PACKAGE_luci-i18n-passwall-zh-cn=y
 # CONFIG_PACKAGE_luci-app-passwall_Transparent_Proxy=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
@@ -308,12 +315,13 @@ CONFIG_PACKAGE_luci-app-eqos=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Client=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Server=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs=y
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_SingBox=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_GO=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_Plus=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray=y
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin=y
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray_Plugin=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray_Plugin=y
 # CONFIG_PACKAGE_luci-app-haproxy-tcp=y
 
 #VSSR（HelloWord）
@@ -386,6 +394,18 @@ CONFIG_PACKAGE_luci-app-uugamebooster=y
 # CONFIG_PACKAGE_luci-udptools=y
 " >> .config
 
+#补充网卡
+echo "
+CONFIG_PACKAGE_kmod-ath=y
+CONFIG_PACKAGE_kmod-ath10k=y
+CONFIG_PACKAGE_ath10k-board-qca9888=y
+CONFIG_PACKAGE_ath10k-board-qca988x=y
+CONFIG_PACKAGE_ath10k-board-qca9984=y
+CONFIG_PACKAGE_ath10k-firmware-qca9888=y
+CONFIG_PACKAGE_ath10k-firmware-qca988x=y
+CONFIG_PACKAGE_ath10k-firmware-qca9984=y
+" >> .config
+
 #5G相关
 echo "
 # 5G模组信号插件
@@ -409,7 +429,7 @@ CONFIG_PACKAGE_luci-app-modem=y
 
 # QMI拨号软件
 # CONFIG_PACKAGE_kmod-qmi_wwan_f=y
-CONFIG_PACKAGE_luci-app-hypermodem=y
+# CONFIG_PACKAGE_luci-app-hypermodem=y
 
 # Gobinet拨号软件
 # CONFIG_PACKAGE_kmod-gobinet=y
