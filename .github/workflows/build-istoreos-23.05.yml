@@ -183,7 +183,7 @@ jobs:
       id: tag
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "::set-output name=release_tag::${{ matrix.ARCHITECTURE }}-05"
+        echo "::set-output name=release_tag::${{ matrix.ARCHITECTURE }}-23.05"
         touch release.txt
         echo "
         💻 架构: ${{ matrix.ARCHITECTURE }}
