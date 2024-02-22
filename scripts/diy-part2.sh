@@ -125,7 +125,8 @@ cp -rf ../../kiddin9/luci-app-onliner/* luci-app-onliner
 #SSR
 # svn export https://github.com/fw876/helloworld/trunk helloworld
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ssr-plus
-# cp -rf ../../kiddin9/luci-app-ssr-plus/* luci-app-ssr-plus
+mkdir luci-app-ssr-plus
+cp -rf ../../kiddin9/luci-app-ssr-plus/* luci-app-ssr-plus
 #Passwall和Passwall2
 # svn export https://github.com/xiaorouji/openwrt-passwall/trunk openwrt-passwall
 # svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
