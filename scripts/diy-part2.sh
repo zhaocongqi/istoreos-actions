@@ -127,6 +127,23 @@ cp -rf ../../kiddin9/luci-app-onliner/* luci-app-onliner
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ssr-plus
 mkdir luci-app-ssr-plus
 cp -rf ../../kiddin9/luci-app-ssr-plus/* luci-app-ssr-plus
+cp -rf ../../kiddin9/dns2socks/* dns2socks
+cp -rf ../../kiddin9/lua-neturl/* lua-neturl
+cp -rf ../../kiddin9/microsocks/* microsocks
+cp -rf ../../kiddin9/tcping/* tcping
+cp -rf ../../kiddin9/shadowsocksr-libev/* shadowsocksr-libev
+cp -rf ../../kiddin9/chinadns-ng/* chinadns-ng
+cp -rf ../../kiddin9/mosdns/* mosdns
+cp -rf ../../kiddin9/hysteria/* hysteria
+cp -rf ../../kiddin9/tuic-client/* tuic-client
+cp -rf ../../kiddin9/shadow-tls/* shadow-tls
+cp -rf ../../kiddin9/ipt2socks/* ipt2socks
+cp -rf ../../kiddin9/naiveproxy/* naiveproxy
+cp -rf ../../kiddin9/redsocks2/* redsocks2
+cp -rf ../../kiddin9/shadowsocks-rust/* shadowsocks-rust
+cp -rf ../../kiddin9/simple-obfs/* simple-obfs
+cp -rf ../../kiddin9/v2ray-plugin/* v2ray-plugin
+cp -rf ../../kiddin9/trojan/* trojan
 #Passwall和Passwall2
 # svn export https://github.com/xiaorouji/openwrt-passwall/trunk openwrt-passwall
 # svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
@@ -296,7 +313,7 @@ CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Server=n
 
 #Passwall和Passwall2
 # CONFIG_PACKAGE_luci-app-passwall2=y
-CONFIG_PACKAGE_luci-app-passwall=y
+# CONFIG_PACKAGE_luci-app-passwall=y
 # CONFIG_PACKAGE_luci-app-passwall_Transparent_Proxy=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
@@ -316,9 +333,9 @@ CONFIG_PACKAGE_luci-app-passwall=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_GO=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_Plus=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray_Plugin=y
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin=y
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray_Plugin=y
 # CONFIG_PACKAGE_luci-app-haproxy-tcp=y
 
 #VSSR（HelloWord）
