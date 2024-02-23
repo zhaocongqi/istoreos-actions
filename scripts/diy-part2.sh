@@ -98,9 +98,6 @@ popd
 mkdir package/community
 pushd package/community
 
-#test
-cp -rf ../../kiddin9/* .
-
 # 系统相关应用
 #Cpufreq（conf已有）
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-cpufreq
@@ -137,23 +134,23 @@ cp -rf ../../kiddin9/luci-app-onliner/* luci-app-onliner
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ssr-plus
 mkdir luci-app-ssr-plus
 cp -rf ../../kiddin9/luci-app-ssr-plus/* luci-app-ssr-plus
-# cp -rf ../../kiddin9/dns2socks/* dns2socks
-# cp -rf ../../kiddin9/lua-neturl/* lua-neturl
-# cp -rf ../../kiddin9/microsocks/* microsocks
-# cp -rf ../../kiddin9/tcping/* tcping
-# cp -rf ../../kiddin9/shadowsocksr-libev/* shadowsocksr-libev
-# cp -rf ../../kiddin9/chinadns-ng/* chinadns-ng
-# cp -rf ../../kiddin9/mosdns/* mosdns
-# cp -rf ../../kiddin9/hysteria/* hysteria
-# cp -rf ../../kiddin9/tuic-client/* tuic-client
-# cp -rf ../../kiddin9/shadow-tls/* shadow-tls
-# cp -rf ../../kiddin9/ipt2socks/* ipt2socks
-# cp -rf ../../kiddin9/naiveproxy/* naiveproxy
-# cp -rf ../../kiddin9/redsocks2/* redsocks2
-# cp -rf ../../kiddin9/shadowsocks-rust/* shadowsocks-rust
-# cp -rf ../../kiddin9/simple-obfs/* simple-obfs
-# cp -rf ../../kiddin9/v2ray-plugin/* v2ray-plugin
-# cp -rf ../../kiddin9/trojan/* trojan
+cp -rf ../../kiddin9/dns2socks/* dns2socks
+cp -rf ../../kiddin9/lua-neturl/* lua-neturl
+cp -rf ../../kiddin9/microsocks/* microsocks
+cp -rf ../../kiddin9/tcping/* tcping
+cp -rf ../../kiddin9/shadowsocksr-libev/* shadowsocksr-libev
+cp -rf ../../kiddin9/chinadns-ng/* chinadns-ng
+cp -rf ../../kiddin9/mosdns/* mosdns
+cp -rf ../../kiddin9/hysteria/* hysteria
+cp -rf ../../kiddin9/tuic-client/* tuic-client
+cp -rf ../../kiddin9/shadow-tls/* shadow-tls
+cp -rf ../../kiddin9/ipt2socks/* ipt2socks
+cp -rf ../../kiddin9/naiveproxy/* naiveproxy
+cp -rf ../../kiddin9/redsocks2/* redsocks2
+cp -rf ../../kiddin9/shadowsocks-rust/* shadowsocks-rust
+cp -rf ../../kiddin9/simple-obfs/* simple-obfs
+cp -rf ../../kiddin9/v2ray-plugin/* v2ray-plugin
+cp -rf ../../kiddin9/trojan/* trojan
 #Passwall和Passwall2
 # svn export https://github.com/xiaorouji/openwrt-passwall/trunk openwrt-passwall
 # svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
@@ -242,10 +239,6 @@ cp -rf ../../kiddin9/luci-app-unblockneteasemusic/* luci-app-unblockneteasemusic
 # svn export https://github.com/Siriling/5G-Modem-Support/trunk/quectel_cm_5G
 # svn export https://github.com/xiaoxifu64/immortalwrt/trunk/package/quectel_MHI
 # svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-hypermodem
-rm -rf quectel_QMI_WWAN
-rm -rf quectel_cm_5G
-rm -rf quectel_MHI
-rm -rf luci-app-hypermodem
 mkdir quectel_QMI_WWAN
 mkdir quectel_cm_5G
 mkdir quectel_MHI
@@ -260,8 +253,6 @@ cp -rf ../../Modem-Support/luci-app-hypermodem/* luci-app-hypermodem
 # svn export https://github.com/dwj0/luci-app-sms-tool/trunk/luci-app-sms-tool
 # svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/applications/luci-app-sms-tool temp/luci-app-sms-tool
 # cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
-rm -rf sms-tool
-rm -rf luci-app-sms-tool
 mkdir sms-tool
 mkdir luci-app-sms-tool
 cp -rf ../../Modem-Support/sms-tool/* sms-tool
