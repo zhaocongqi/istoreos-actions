@@ -2,6 +2,10 @@
 
 # iStoreOS 定制固件
 
+[![iStore使用文档](https://img.shields.io/badge/使用文档-iStore%20OS-brightgreen?style=flat-square)](https://doc.linkease.com/zh/guide/istoreos) [![最新固件下载](https://img.shields.io/github/v/release/draco-china/istoreos-rk35xx-actions?style=flat-square&label=最新固件下载)](../../releases/latest)
+
+![支持设备](https://img.shields.io/badge/支持设备:-blueviolet.svg?style=flat-square) ![H88K](https://img.shields.io/badge/H88K-blue.svg?style=flat-square) ![H66K](https://img.shields.io/badge/H66K-blue.svg?style=flat-square) ![H68K](https://img.shields.io/badge/H68K-blue.svg?style=flat-square) ![H69K](https://img.shields.io/badge/H69K-blue.svg?style=flat-square) ![R5S](https://img.shields.io/badge/R5S-blue.svg?style=flat-square) ![R6S](https://img.shields.io/badge/R6S-blue.svg?style=flat-square) ![R66S](https://img.shields.io/badge/R66S-blue.svg?style=flat-square) ![R68S](https://img.shields.io/badge/R68S-blue.svg?style=flat-square) ![STATION P2](https://img.shields.io/badge/STATION%20P2-blue.svg?style=flat-square) ![T68M](https://img.shields.io/badge/T68M-blue.svg?style=flat-square) ![XGP](https://img.shields.io/badge/XGP-blue.svg?style=flat-square)
+
 # 目录
 
 [一、简介](#一简介)
@@ -16,10 +20,6 @@
 
 [六、鸣谢](#六鸣谢)
 
-[![iStore使用文档](https://img.shields.io/badge/使用文档-iStore%20OS-brightgreen?style=flat-square)](https://doc.linkease.com/zh/guide/istoreos) [![最新固件下载](https://img.shields.io/github/v/release/draco-china/istoreos-rk35xx-actions?style=flat-square&label=最新固件下载)](../../releases/latest)
-
-![支持设备](https://img.shields.io/badge/支持设备:-blueviolet.svg?style=flat-square) ![H88K](https://img.shields.io/badge/H88K-blue.svg?style=flat-square) ![H66K](https://img.shields.io/badge/H66K-blue.svg?style=flat-square) ![H68K](https://img.shields.io/badge/H68K-blue.svg?style=flat-square) ![H69K](https://img.shields.io/badge/H69K-blue.svg?style=flat-square) ![R5S](https://img.shields.io/badge/R5S-blue.svg?style=flat-square) ![R6S](https://img.shields.io/badge/R6S-blue.svg?style=flat-square) ![R66S](https://img.shields.io/badge/R66S-blue.svg?style=flat-square) ![R68S](https://img.shields.io/badge/R68S-blue.svg?style=flat-square) ![STATION P2](https://img.shields.io/badge/STATION%20P2-blue.svg?style=flat-square) ![T68M](https://img.shields.io/badge/T68M-blue.svg?style=flat-square)
-
 # 一、简介
 
 该项目从[draco-china/customize-istoreos-actions](https://github.com/draco-china/customize-istoreos-actions)进行定制，添加5G模块官方支持和一些常用插件
@@ -32,11 +32,19 @@
 
 ## 功能特性
 
-- 移除 ddns 和 ddnsto
+- 移除 ddnsto
 - 移除 bootstrap 主题
 - 添加5G模块官方驱动和官方拨号工具
 - 添加5G短信插件
-- 添加一些常用的插件
+- 添加5G模块管理插件
+- 添加以下插件
+  - OpenClash
+  - ADGuardHome
+  - Socat
+  - 解锁网易云音乐播放限制
+  - UU游戏加速器
+
+
 
 ## 默认配置
 
@@ -68,15 +76,17 @@
 
 ### RK35xx 架构
 
-| 设备           | 包名称                                                                   |
-| -------------- | ------------------------------------------------------------------------ |
-| H66K/H68K/H69K | istoreos-rockchip-rk35xx-hinlink_opc-h6xk-squashfs-combined.img.gz       |
-| H88K           | istoreos-rockchip-rk35xx-hinlink_h88k-squashfs-combined.img.gz           |
+| 设备           | 包名称                                                       |
+| -------------- | ------------------------------------------------------------ |
+| H28K           | istoreos-rockchip-rk35xx-hlink_h28k-squashfs-sysupgrade.img.gz |
+| H66K/H68K/H69K | istoreos-rockchip-rk35xx-hinlink_opc-h6xk-squashfs-combined.img.gz |
+| H88K           | istoreos-rockchip-rk35xx-hinlink_h88k-squashfs-combined.img.gz |
 | NANOPI-R5S     | istoreos-rockchip-rk35xx-friendlyarm_nanopi-r5s-squashfs-combined.img.gz |
 | NANOPI-R6S     | istoreos-rockchip-rk35xx-friendlyarm_nanopi-r6s-squashfs-combined.img.gz |
-| R66S/R68S      | istoreos-rockchip-rk35xx-fastrhino_r6xs-squashfs-combined.img.gz         |
-| STATION-P2     | istoreos-rockchip-rk35xx-firefly_station-p2-squashfs-combined.img.gz     |
-| T68M           | istoreos-rockchip-rk35xx-lyt_t68m-squashfs-combined.img.gz               |
+| R66S/R68S      | istoreos-rockchip-rk35xx-fastrhino_r6xs-squashfs-combined.img.gz |
+| STATION-P2     | istoreos-rockchip-rk35xx-firefly_station-p2-squashfs-combined.img.gz |
+| T68M           | istoreos-rockchip-rk35xx-lyt_t68m-squashfs-combined.img.gz   |
+| XGP            | istoreos-rockchip-rk35xx-nlnet_xgp-squashfs-combined.img.gz  |
 
 ### x86 架构
 
