@@ -164,7 +164,7 @@ cp -rf ../../kiddin9/luci-app-onliner/* luci-app-onliner
 # cp -rf temp/luci-app-openclash/* luci-app-openclash
 mkdir luci-app-openclash
 cp -rf ../../kiddin9/luci-app-openclash/* luci-app-openclash
-cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-openclash/* luci-app-openclash
+# cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-openclash/* luci-app-openclash
 #加入OpenClash核心
 chmod -R a+x $GITHUB_WORKSPACE/scripts/preset-clash-core.sh
 if [ "$1" = "rk33xx" ]; then
