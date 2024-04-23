@@ -265,12 +265,9 @@ cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-sms-tool/* 
 # svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/luci-app-3ginfo
 
 # 5G模组信息插件+AT工具
-# svn export https://github.com/Siriling/5G-Modem-Support/trunk/sendat
-# svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-cpe
-# svn export https://github.com/dwj0/luci-app-sms-tool/trunk/sms-tool
-# svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-modem
 mkdir luci-app-modem
 cp -rf ../../Modem-Support/luci-app-modem/* luci-app-modem
+rm -rf ../../Modem-Support/luci-app-modem/po/zh_Hans #解决汉化问题
 popd
 
 # 5G模组拨号脚本
