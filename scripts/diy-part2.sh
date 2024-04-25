@@ -414,6 +414,7 @@ CONFIG_PACKAGE_luci-app-uugamebooster=y
 
 #补充网卡
 echo "
+CONFIG_PACKAGE_kmod-mt7922-firmware=y
 CONFIG_PACKAGE_kmod-ath=y
 CONFIG_PACKAGE_kmod-ath10k=y
 CONFIG_PACKAGE_ath10k-board-qca9888=y
