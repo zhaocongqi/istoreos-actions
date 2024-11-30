@@ -81,15 +81,24 @@ jobs:
     #     sudo -E apt-get -qq clean
     #     echo "------------------------------- 设置工作目录及时区 -------------------------------"
     #     sudo timedatectl set-timezone "$TZ"
-    #     sudo mkdir -p /workdir
-    #     sudo chown $USER:$GROUPS /workdir
+    #     sudo mkdir -p /home/ling/work/actions-runner/x86/workdir
+    #     sudo chown $USER:$GROUPS /home/ling/work/actions-runner/x86/workdir
+
+    - name: 初始化编译环境
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        echo "------------------------------- 设置工作目录及时区 -------------------------------"
+        timedatectl set-timezone "$TZ"
+        mkdir -p /home/ling/work/actions-runner/x86/workdir
+        chown $USER:$GROUPS /home/ling/work/actions-runner/x86/workdir
 
     - name: 克隆源码
-      working-directory: /workdir
+      working-directory: /home/ling/work/actions-runner/x86/workdir
       run: |
         df -hT $PWD
         git clone $REPO_URL -b ${{ matrix.REPO_BRANCH }} openwrt
-        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        ln -sf /home/ling/work/actions-runner/x86/workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: 缓存构建动作
       uses: klever1988/cachewrtbuild@main
