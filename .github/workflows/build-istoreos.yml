@@ -26,7 +26,8 @@ env:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    # runs-on: ${{ matrix.os }}
+    runs-on: self-hosted
     strategy:
       matrix:
         REPO_BRANCH:
