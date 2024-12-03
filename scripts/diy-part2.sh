@@ -489,3 +489,7 @@ echo "
 CONFIG_GRUB_IMAGES=y
 CONFIG_VMDK_IMAGES=y
 " >> .config
+
+rm -rf kiddin9
+rm -rf Modem-Support
+rm -rf MyConfig
