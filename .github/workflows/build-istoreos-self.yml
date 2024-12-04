@@ -96,6 +96,7 @@ jobs:
       working-directory: /home/ling/work/actions-runner/istore/workdir
       run: |
         df -hT $PWD
+        rm -rf openwrt
         git clone $REPO_URL -b ${{ matrix.REPO_BRANCH }} openwrt
         ln -sf /home/ling/work/actions-runner/istore/workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
