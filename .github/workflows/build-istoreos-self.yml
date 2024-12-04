@@ -81,8 +81,8 @@ jobs:
     #     sudo -E apt-get -qq clean
     #     echo "------------------------------- 设置工作目录及时区 -------------------------------"
     #     sudo timedatectl set-timezone "$TZ"
-    #     sudo mkdir -p /home/ling/work/actions-runner/x86/workdir
-    #     sudo chown $USER:$GROUPS /home/ling/work/actions-runner/x86/workdir
+    #     sudo mkdir -p /home/ling/work/actions-runner/istore/workdir
+    #     sudo chown $USER:$GROUPS /home/ling/work/actions-runner/istore/workdir
 
     - name: 初始化编译环境
       env:
