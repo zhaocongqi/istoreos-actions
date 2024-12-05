@@ -18,6 +18,7 @@ env:
   CONFIG_FILE: .config
   DIY_P1_SH: scripts/diy-part1.sh
   DIY_P2_SH: scripts/diy-part2.sh
+  WORK_DIR: /home/ling/work/actions-runner/istore
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -81,8 +82,8 @@ jobs:
     #     sudo -E apt-get -qq clean
     #     echo "------------------------------- 设置工作目录及时区 -------------------------------"
     #     sudo timedatectl set-timezone "$TZ"
-    #     sudo mkdir -p /home/ling/work/actions-runner/istore/workdir
-    #     sudo chown $USER:$GROUPS /home/ling/work/actions-runner/istore/workdir
+    #     sudo mkdir -p ${WORK_DIR}/workdir
+    #     sudo chown $USER:$GROUPS ${WORK_DIR}/workdir
 
     - name: 初始化编译环境
       env:
@@ -90,15 +91,15 @@ jobs:
       run: |
         echo "------------------------------- 设置工作目录及时区 -------------------------------"
         timedatectl set-timezone "$TZ"
-        mkdir -p /home/ling/work/actions-runner/istore/workdir
+        mkdir -p ${WORK_DIR}/workdir
 
     - name: 克隆源码
-      working-directory: /home/ling/work/actions-runner/istore/workdir
+      working-directory: ${WORK_DIR}/workdir
       run: |
         df -hT $PWD
         rm -rf openwrt
         git clone $REPO_URL -b ${{ matrix.REPO_BRANCH }} openwrt
-        ln -sf /home/ling/work/actions-runner/istore/workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        ln -sf ${WORK_DIR}/workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: 缓存构建动作
       uses: klever1988/cachewrtbuild@main
