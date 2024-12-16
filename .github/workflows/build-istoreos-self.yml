@@ -27,7 +27,7 @@ env:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         REPO_BRANCH:
@@ -38,8 +38,9 @@ jobs:
           - rk33xx
           - rk35xx
           - x86
-        os:
-          - ubuntu-22.04
+          os:
+            # - ubuntu-22.04
+            - self-hosted
 
       fail-fast: false
 
