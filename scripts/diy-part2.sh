@@ -489,3 +489,33 @@ echo "
 CONFIG_GRUB_IMAGES=y
 CONFIG_VMDK_IMAGES=y
 " >> .config
+
+# 添加设备
+# if [ "$1" = "rk33xx" ]; then
+#     echo "
+#     CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_armsom_p2-pro=y
+#     CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_pine64_rockpro64=y
+#     CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_radxa_rock-pi-4a=y
+#     CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_rockchip_rk3308_evb=y
+#     " >> .config
+# elif [ "$1" = "rk35xx" ]; then
+#     echo "
+#     CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_armsom_sige1=y
+#     CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_armsom_sige7-v1=y
+#     CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_cyber3588_aib=y
+#     CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_dg_nas-lite=y
+#     CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_fastrhino_r66s=y
+#     CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_fastrhino_r68s=y
+#     CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_hinlink_hnas=y
+#     CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_idiskk_h1=y
+#     CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_inspur_ihec301=y
+#     CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_jp_tvbox=y
+#     CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_jsy_h1=y
+#     CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_le_hes30=y
+#     CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_panther_x2=y
+#     CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_roc_k50s=y
+#     CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_ynn_ynnnas=y
+#     CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_yyy_h1=y
+#     " >> .config
+# fi
+
