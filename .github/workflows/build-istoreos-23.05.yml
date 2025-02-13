@@ -140,7 +140,7 @@ jobs:
         [ -e $CONFIG_FILE_PATH ] && mv $CONFIG_FILE_PATH openwrt/$CONFIG_FILE
         chmod +x $DIY_P2_SH
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH
+        $GITHUB_WORKSPACE/$DIY_P2_SH ${{ matrix.ARCHITECTURE }}
 
     - name: 设置LAN IP地址（路由器登录地址）
       run: |
@@ -148,13 +148,14 @@ jobs:
         SET_IP=${{ github.event.inputs.lan_ip }}
         #修改默认IP地址
         sed -i "s/192\.168\.[0-9]*\.[0-9]*/$SET_IP/g" package/base-files/files/bin/config_generate
-        echo "Set LAN IP Address: $SET_IP"  
+        echo "Set LAN IP Address: $SET_IP"
 
     - name: 设置系统名称
       run: |
         cd openwrt
         set_os_name=${{ github.event.inputs.os_name }}
         sed -i "s/OpenWrt/${set_os_name}/g" package/base-files/files/bin/config_generate
+        echo "Set OS name : ${set_os_name}"
 
     - name: 启用WiFi
       if: github.event.inputs.enable_wifi == 'true'
