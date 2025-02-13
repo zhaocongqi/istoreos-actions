@@ -155,6 +155,7 @@ jobs:
         cd openwrt
         set_os_name=${{ github.event.inputs.os_name }}
         sed -i "s/OpenWrt/${set_os_name}/g" package/base-files/files/bin/config_generate
+        echo "Set OS name : $set_os_name"
 
     - name: 启用WiFi
       if: github.event.inputs.enable_wifi == 'true'
