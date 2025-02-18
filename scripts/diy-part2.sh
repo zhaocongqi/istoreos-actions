@@ -247,6 +247,11 @@ mkdir njitclient
 mkdir luci-app-njitclient
 cp -rf ../../kiddin9/njitclient/* njitclient
 cp -rf ../../kiddin9/luci-app-njitclient/* luci-app-njitclient
+#sysuh3c
+mkdir sysuh3c
+mkdir luci-app-sysuh3c
+cp -rf ../../kiddin9/sysuh3c/* sysuh3c
+cp -rf ../../kiddin9/luci-app-sysuh3c/* luci-app-sysuh3c
 
 # 5G通信模组拨号工具
 mkdir quectel_QMI_WWAN
@@ -423,6 +428,7 @@ CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
 # CONFIG_PACKAGE_luci-app-xlnetacc=y
 # CONFIG_PACKAGE_luci-udptools=y
 CONFIG_PACKAGE_luci-app-njitclient=y
+CONFIG_PACKAGE_luci-app-sysuh3c=y
 " >> .config
 
 #补充网卡
