@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo -e "添加额外设备"
 
 # 加入nsy_g68-plus初始化网络配置脚本
