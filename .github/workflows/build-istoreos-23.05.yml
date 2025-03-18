@@ -148,7 +148,6 @@ jobs:
         SET_IP=${{ github.event.inputs.lan_ip }}
         if [ -z "$SET_IP" ]; then
             SET_IP="192.168.10.1"
-            github.event.inputs.lan_ip="192.168.10.1"
         fi
         #修改默认IP地址
         sed -i "s/192\.168\.[0-9]*\.[0-9]*/$SET_IP/g" package/base-files/files/bin/config_generate
@@ -160,7 +159,6 @@ jobs:
         set_os_name=${{ github.event.inputs.os_name }}
         if [ -z "$set_os_name" ]; then
             set_os_name="iStore OS"
-            github.event.inputs.os_name="iStore OS"
         fi
         sed -i "s/OpenWrt/${set_os_name}/g" package/base-files/files/bin/config_generate
         echo "Set OS name : ${set_os_name}"
@@ -228,6 +226,10 @@ jobs:
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
         echo "::set-output name=release_tag::${{ matrix.ARCHITECTURE }}-23.05"
+        SET_IP=${{ github.event.inputs.lan_ip }}
+        if [ -z "$SET_IP" ]; then
+            SET_IP="192.168.10.1"
+        fi
         touch release.txt
         echo "
         💻 架构: ${{ matrix.ARCHITECTURE }}
@@ -238,13 +240,14 @@ jobs:
 
         ⏱️ 编译时间: $(date +"%Y年%m月%d日%H时%M分")
 
-        🌐 管理地址: ${{ github.event.inputs.lan_ip }}
+        🌐 管理地址: ${SET_IP}
 
         👤 用户名: root
 
         🔒 密码: password
 
-        📒 说明: 单网口设备默认网口为LAN（旁路由模式），需要接入主路由器后进后台查找对应IP地址访问。双网口及以上设备，默认网口为WAN+LAN（主路由模式），接入LAN可直接访问 " >> release.txt
+        📒 说明: 单网口设备默认网口为LAN（旁路由模式），需要接入主路由器后进后台查找对应IP地址访问
+                 双网口及以上设备，默认网口为WAN+LAN（主路由模式），接入LAN可直接访问 " >> release.txt
         echo "::set-output name=status::success"
 
     - name: 自动发布固件到 Releases
