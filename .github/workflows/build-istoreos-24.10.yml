@@ -47,7 +47,7 @@ jobs:
           # - main
           # - istoreos-22.03
           # - istoreos-23.05
-          - istoreos-23.10
+          - istoreos-24.10
         ARCHITECTURE:
           - rk33xx
           - rk35xx
