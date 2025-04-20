@@ -1,4 +1,4 @@
-name: Build iStore OS
+name: Build iStore OS 24.10
 
 on:
   repository_dispatch:
@@ -45,9 +45,9 @@ jobs:
       matrix:
         REPO_BRANCH:
           # - main
-          - istoreos-22.03
+          # - istoreos-22.03
           # - istoreos-23.05
-          # - istoreos-23.10
+          - istoreos-23.10
         ARCHITECTURE:
           - rk33xx
           - rk35xx
@@ -226,7 +226,7 @@ jobs:
       id: tag
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "::set-output name=release_tag::${{ matrix.ARCHITECTURE }}"
+        echo "::set-output name=release_tag::${{ matrix.ARCHITECTURE }}-24.10"
         SET_IP=${{ github.event.inputs.lan_ip }}
         if [ -z "$SET_IP" ]; then
             SET_IP="192.168.10.1"

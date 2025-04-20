@@ -47,6 +47,7 @@ jobs:
           # - main
           # - istoreos-22.03
           - istoreos-23.05
+          # - istoreos-23.10
         ARCHITECTURE:
           - rk33xx
           - rk35xx
@@ -156,7 +157,7 @@ jobs:
     - name: 设置系统名称
       run: |
         cd openwrt
-        set_os_name=${{ github.event.inputs.os_name }}
+        set_os_name="${{ github.event.inputs.os_name }}"
         if [ -z "$set_os_name" ]; then
             set_os_name="iStore OS"
         fi
@@ -246,8 +247,7 @@ jobs:
 
         🔒 密码: password
 
-        📒 说明: 单网口设备默认网口为LAN（旁路由模式），需要接入主路由器后进后台查找对应IP地址访问
-                 双网口及以上设备，默认网口为WAN+LAN（主路由模式），接入LAN可直接访问 " >> release.txt
+        📒 说明: 单网口设备默认网口为LAN（旁路由模式），需要接入主路由器后进后台查找对应IP地址访问。双网口及以上设备，默认网口为WAN+LAN（主路由模式），接入LAN可直接访问" >> release.txt
         echo "::set-output name=status::success"
 
     - name: 自动发布固件到 Releases
