@@ -21,8 +21,8 @@ on:
         description: 'SSH connection to Actions'
         required: false
         default: 'false'
-  schedule:
-   - cron: 0 16 * * *
+  # schedule:
+  #  - cron: 0 16 * * *
 
 env:
   REPO_URL: https://github.com/istoreos/istoreos
@@ -49,9 +49,9 @@ jobs:
           - istoreos-23.05
           # - istoreos-24.10
         ARCHITECTURE:
-          - rk33xx
-          - rk35xx
-          - x86
+          - rk33xx-23.05
+          - rk35xx-23.05
+          - x86-23.05
         os:
           - ubuntu-22.04
 
