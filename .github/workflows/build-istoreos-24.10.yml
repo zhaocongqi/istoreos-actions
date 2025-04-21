@@ -133,6 +133,16 @@ jobs:
     - name: 安装 feeds
       run: cd openwrt && ./scripts/feeds install -a
 
+    # - name: 加载自定义配置
+    #   env:
+    #     CONFIG_FILE_PATH: ${{ matrix.ARCHITECTURE }}/${{ env.CONFIG_FILE }}
+    #   run: |
+    #     [ -e files ] && mv files openwrt/files
+    #     [ -e $CONFIG_FILE_PATH ] && mv $CONFIG_FILE_PATH openwrt/$CONFIG_FILE
+    #     chmod +x $DIY_P2_SH
+    #     cd openwrt
+    #     $GITHUB_WORKSPACE/$DIY_P2_SH ${{ matrix.ARCHITECTURE }}
+
     - name: 加载自定义配置
       env:
         CONFIG_FILE_PATH: ${{ matrix.ARCHITECTURE }}/${{ env.CONFIG_FILE }}
@@ -141,7 +151,6 @@ jobs:
         [ -e $CONFIG_FILE_PATH ] && mv $CONFIG_FILE_PATH openwrt/$CONFIG_FILE
         chmod +x $DIY_P2_SH
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH ${{ matrix.ARCHITECTURE }}
 
     - name: 设置LAN IP地址（路由器登录地址）
       run: |
