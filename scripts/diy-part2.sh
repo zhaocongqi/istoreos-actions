@@ -239,19 +239,25 @@ sed -i 's/拦截DNS服务器/拦截DNS服务器（默认用户名和密码均为
 #Socat（iStoreOS已有）
 #svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-socat
 #Unblockneteasemusic
-mkdir UnblockNeteaseMusic
-mkdir luci-app-unblockneteasemusic
-cp -rf ../../kiddin9/UnblockNeteaseMusic/* UnblockNeteaseMusic
-cp -rf ../../kiddin9/luci-app-unblockneteasemusic/* luci-app-unblockneteasemusic
+# mkdir UnblockNeteaseMusic
+# mkdir luci-app-unblockneteasemusic
+# cp -rf ../../kiddin9/UnblockNeteaseMusic/* UnblockNeteaseMusic
+# cp -rf ../../kiddin9/luci-app-unblockneteasemusic/* luci-app-unblockneteasemusic
 #OpenAppFilter（conf已有）
 # svn export https://github.com/destan19/OpenAppFilter/trunk OpenAppFilter
 
 # 5G通信模组拨号工具
 mkdir quectel_QMI_WWAN
+# mkdir fibocom_QMI_WWAN
+# mkdir meig_QMI_WWAN
+mkdir tw_QMI_WWAN
 mkdir quectel_cm_5G
 mkdir quectel_MHI
 # mkdir luci-app-hypermodem
 cp -rf ../../Modem-Support/quectel_QMI_WWAN/* quectel_QMI_WWAN
+# cp -rf ../../Modem-Support/fibocom_QMI_WWAN/* fibocom_QMI_WWAN
+# cp -rf ../../Modem-Support/meig_QMI_WWAN/* meig_QMI_WWAN
+cp -rf ../../Modem-Support/tw_QMI_WWAN/* tw_QMI_WWAN
 cp -rf ../../Modem-Support/quectel_cm_5G/* quectel_cm_5G
 cp -rf ../../Modem-Support/quectel_MHI/* quectel_MHI
 # cp -rf ../../Modem-Support/luci-app-hypermodem/* luci-app-hypermodem
@@ -304,7 +310,7 @@ echo "
 # 科学上网和代理应用
 echo "
 #SSR
-CONFIG_PACKAGE_luci-app-ssr-plus=y
+# CONFIG_PACKAGE_luci-app-ssr-plus=y
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Client=y
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Client is not set
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Client is not set
@@ -436,7 +442,7 @@ echo "
 echo "
 # CONFIG_PACKAGE_luci-app-pushbot=y
 CONFIG_PACKAGE_luci-app-socat=y
-CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
+# CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
 # CONFIG_PACKAGE_luci-app-uugamebooster=y
 # CONFIG_PACKAGE_luci-app-wifischedule=y
 # CONFIG_PACKAGE_luci-app-xlnetacc=y
@@ -473,13 +479,16 @@ CONFIG_PACKAGE_luci-app-sms-tool=y
 # CONFIG_PACKAGE_sendat=y
 CONFIG_PACKAGE_sms-tool=y
 CONFIG_PACKAGE_luci-app-modem=y
+# CONFIG_PACKAGE_kmod-qmi_wwan_q=y
+# CONFIG_PACKAGE_kmod-qmi_wwan_f=y
+# CONFIG_PACKAGE_kmod-qmi_wwan_m=y
+CONFIG_PACKAGE_kmod-qmi_wwan_t=y
 
 # QMI拨号工具（移远，广和通）
 # CONFIG_PACKAGE_quectel-CM-5G=y
 # CONFIG_PACKAGE_fibocom-dial=y
 
 # QMI拨号软件
-# CONFIG_PACKAGE_kmod-qmi_wwan_f=y
 # CONFIG_PACKAGE_luci-app-hypermodem=y
 
 # Gobinet拨号软件
