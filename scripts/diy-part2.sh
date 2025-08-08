@@ -275,6 +275,10 @@ cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-sms-tool/* 
 # svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/3ginfo
 # svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/luci-app-3ginfo
 
+# 5G模组IPv6
+mkdir ndisc
+cp -rf ../../Modem-Support/ndisc/* ndisc
+
 # 5G模组信息插件+AT工具
 mkdir luci-app-modem
 cp -rf ../../Modem-Support/luci-app-modem/* luci-app-modem
