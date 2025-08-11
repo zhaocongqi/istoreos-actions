@@ -89,11 +89,12 @@ ls feeds/packages/lang/rust
 echo "------------"
 ls package/feeds/packages/rust
 echo "------------"
-cat feeds/packages/lang/rust/config.toml
-echo "------------"
 cat feeds/packages/lang/rust/Makefile
 echo "------------"
 sed -i 's/--set=llvm.download-ci-llvm=true/--set=llvm.download-ci-llvm=if-unchanged/' feeds/packages/lang/rust/Makefile
+echo "------------"
+cat feeds/packages/lang/rust/Makefile
+echo "------------"
 
 # 添加第三方应用
 mkdir kiddin9
