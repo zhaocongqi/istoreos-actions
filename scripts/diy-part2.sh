@@ -93,7 +93,7 @@ cat feeds/packages/lang/rust/config.toml
 echo "------------"
 cat feeds/packages/lang/rust/Makefile
 echo "------------"
-sed -i 's/download-ci-llvm = "true"/download-ci-llvm = "if-unchanged"/' feeds/packages/lang/rust/files/config.toml
+sed -i 's/--set=llvm.download-ci-llvm=true/--set=llvm.download-ci-llvm=if-unchanged/' feeds/packages/lang/rust/Makefile
 
 # 添加第三方应用
 mkdir kiddin9
