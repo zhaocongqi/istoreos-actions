@@ -85,9 +85,9 @@ sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootst
 # 解决rust编译错误（`llvm.download-ci-llvm` cannot be set to `true` on CI. Use `if-unchanged` instead.）
 echo "------------"
 find -name rust
-ls feeds/packages/lang/rust/files
-echo "------------"
 ls feeds/packages/lang/rust
+echo "------------"
+ls package/feeds/packages/rust
 echo "------------"
 cat feeds/packages/lang/rust/files/config.toml
 echo "------------"
