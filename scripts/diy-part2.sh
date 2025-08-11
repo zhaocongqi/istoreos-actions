@@ -91,6 +91,8 @@ ls package/feeds/packages/rust
 echo "------------"
 cat feeds/packages/lang/rust/config.toml
 echo "------------"
+cat feeds/packages/lang/rust/Makefile
+echo "------------"
 sed -i 's/download-ci-llvm = "true"/download-ci-llvm = "if-unchanged"/' feeds/packages/lang/rust/files/config.toml
 
 # 添加第三方应用
