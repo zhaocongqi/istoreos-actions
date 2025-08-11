@@ -82,6 +82,14 @@ sed -i 's/CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y/CONFIG_PACKAGE_luci-i18n-ddnst
 # 移除 bootstrap 主题
 sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootstrap=n/' .config
 
+# 解决rust编译错误（`llvm.download-ci-llvm` cannot be set to `true` on CI. Use `if-unchanged` instead.）
+echo "------------"
+ls package/feeds/packages/lang/rust/files
+echo "************"
+cat package/feeds/packages/lang/rust/config.toml
+echo "------------"
+sed -i 's/download-ci-llvm = "true"/download-ci-llvm = "if-unchanged"/' package/feeds/packages/rust/Makefile
+
 # 添加第三方应用
 mkdir kiddin9
 pushd kiddin9
