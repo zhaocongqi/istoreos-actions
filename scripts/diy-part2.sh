@@ -85,8 +85,13 @@ sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootst
 # 解决rust编译错误（`llvm.download-ci-llvm` cannot be set to `true` on CI. Use `if-unchanged` instead.）
 echo "------------"
 find -name rust
+ls feeds/packages/lang/rust/files
 echo "------------"
-sed -i 's/download-ci-llvm = "true"/download-ci-llvm = "if-unchanged"/' package/feeds/packages/rust/Makefile
+ls feeds/packages/lang/rust
+echo "------------"
+cat feeds/packages/lang/rust/files/config.toml
+echo "------------"
+sed -i 's/download-ci-llvm = "true"/download-ci-llvm = "if-unchanged"/' feeds/packages/lang/rust/files/config.toml
 
 # 添加第三方应用
 mkdir kiddin9
