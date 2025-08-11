@@ -84,9 +84,7 @@ sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootst
 
 # 解决rust编译错误（`llvm.download-ci-llvm` cannot be set to `true` on CI. Use `if-unchanged` instead.）
 echo "------------"
-ls package/feeds/packages/lang/rust/files
-echo "************"
-cat package/feeds/packages/lang/rust/config.toml
+find -name rust
 echo "------------"
 sed -i 's/download-ci-llvm = "true"/download-ci-llvm = "if-unchanged"/' package/feeds/packages/rust/Makefile
 
@@ -133,8 +131,8 @@ cp -rf ../../kiddin9/luci-app-onliner/* luci-app-onliner
 #Wolplus（已有Wol）
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wolplus
 #WiFischedule
-mkdir luci-app-wifischedule
-cp -rf ../../kiddin9/luci-app-wifischedule/* luci-app-wifischedule
+# mkdir luci-app-wifischedule
+# cp -rf ../../kiddin9/luci-app-wifischedule/* luci-app-wifischedule
 #RAMfree
 mkdir luci-app-ramfree
 cp -rf ../../kiddin9/luci-app-ramfree/* luci-app-ramfree
@@ -142,8 +140,8 @@ cp -rf ../../kiddin9/luci-app-ramfree/* luci-app-ramfree
 # mkdir luci-app-ttyd
 # cp -rf ../kiddin9/luci-app-ttyd/* luci-app-ttyd
 #usb3disable（禁用USB3.0接口）
-mkdir luci-app-usb3disable
-cp -rf ../../kiddin9/luci-app-usb3disable/* luci-app-usb3disable
+# mkdir luci-app-usb3disable
+# cp -rf ../../kiddin9/luci-app-usb3disable/* luci-app-usb3disable
 #NetData（系统监控）
 mkdir luci-app-netdata
 cp -rf ../../kiddin9/luci-app-netdata/* luci-app-netdata
@@ -307,7 +305,7 @@ CONFIG_PACKAGE_luci-app-fileassistant=y
 CONFIG_PACKAGE_luci-app-onliner=y
 CONFIG_PACKAGE_luci-app-eqos=y
 # CONFIG_PACKAGE_luci-app-wolplus=y
-CONFIG_PACKAGE_luci-app-wifischedule=y
+# CONFIG_PACKAGE_luci-app-wifischedule=y
 CONFIG_PACKAGE_luci-app-ramfree=y
 # CONFIG_PACKAGE_luci-app-usb3disable=y
 CONFIG_PACKAGE_luci-app-luci-app-netdata=y
@@ -456,7 +454,6 @@ echo "
 CONFIG_PACKAGE_luci-app-socat=y
 # CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
 # CONFIG_PACKAGE_luci-app-uugamebooster=y
-# CONFIG_PACKAGE_luci-app-wifischedule=y
 # CONFIG_PACKAGE_luci-app-xlnetacc=y
 # CONFIG_PACKAGE_luci-udptools=y
 " >> .config
