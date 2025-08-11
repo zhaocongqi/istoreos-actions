@@ -89,7 +89,7 @@ ls feeds/packages/lang/rust
 echo "------------"
 ls package/feeds/packages/rust
 echo "------------"
-cat feeds/packages/lang/rust/files/config.toml
+cat feeds/packages/lang/rust/config.toml
 echo "------------"
 sed -i 's/download-ci-llvm = "true"/download-ci-llvm = "if-unchanged"/' feeds/packages/lang/rust/files/config.toml
 
