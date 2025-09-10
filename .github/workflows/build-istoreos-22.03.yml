@@ -1,6 +1,7 @@
-name: Build iStore OS 23.05
+name: Build iStore OS 22.03
 
 on:
+  repository_dispatch:
   workflow_dispatch:
     inputs:
       lan_ip:
@@ -20,8 +21,8 @@ on:
         description: "SSH connection to Actions"
         required: false
         default: "false"
-  # schedule:
-  #  - cron: 0 16 * * *
+  schedule:
+    - cron: 0 16 * * *
 
 env:
   REPO_URL: https://github.com/istoreos/istoreos
@@ -44,13 +45,13 @@ jobs:
       matrix:
         REPO_BRANCH:
           # - main
-          # - istoreos-22.03
-          - istoreos-23.05
+          - istoreos-22.03
+          # - istoreos-23.05
           # - istoreos-24.10
         ARCHITECTURE:
-          - rk33xx-23.05
-          - rk35xx-23.05
-          - x86-23.05
+          - rk33xx
+          - rk35xx
+          - x86
         os:
           - ubuntu-22.04
 
