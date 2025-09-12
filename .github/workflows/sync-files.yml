@@ -52,7 +52,7 @@ jobs:
           commit_message: "Sync files"
 
       - name: 删除运行记录
-        uses: GitRML/delete-workflow-runs@main
+        uses: Mattraks/delete-workflow-runs@v2
         with:
           retain_days: 1
           keep_minimum_runs: 1
