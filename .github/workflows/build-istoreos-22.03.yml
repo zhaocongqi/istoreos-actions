@@ -80,7 +80,6 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: 1.21.1
-          cache: true
 
       - name: 初始化编译环境
         env:
