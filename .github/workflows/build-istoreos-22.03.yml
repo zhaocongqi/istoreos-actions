@@ -226,7 +226,7 @@ jobs:
         id: tag
         if: steps.compile.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
         run: |
-          echo "::set-output name=release_tag::${{ matrix.ARCHITECTURE }}"
+          echo "release_tag=${{ matrix.ARCHITECTURE }}" >> $GITHUB_OUTPUT
           SET_IP=${{ github.event.inputs.lan_ip }}
           if [ -z "$SET_IP" ]; then
               SET_IP="192.168.10.1"
