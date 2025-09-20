@@ -532,6 +532,8 @@ CONFIG_VMDK_IMAGES=y
 sed -i 's/CONFIG_PACKAGE_containerd=y/CONFIG_PACKAGE_containerd=n/' .config
 sed -i 's/CONFIG_PACKAGE_docker=y/CONFIG_PACKAGE_docker=n/' .config
 sed -i 's/CONFIG_PACKAGE_dockerd=y/CONFIG_PACKAGE_dockerd=n/' .config
+sed -i 's/CONFIG_PACKAGE_luci-app-dockerman=y/CONFIG_PACKAGE_luci-app-dockerman=n/' .config
+sed -i 's/CONFIG_PACKAGE_luci-i18n-dockerman-zh-cn=y/CONFIG_PACKAGE_luci-i18n-dockerman-zh-cn=n/' .config
 sed -i 's/CONFIG_DOCKER_NET_ENCRYPT=y/CONFIG_DOCKER_NET_ENCRYPT=n/' .config
 sed -i 's/CONFIG_DOCKER_NET_MACVLAN=y/CONFIG_DOCKER_NET_MACVLAN=n/' .config
 sed -i 's/CONFIG_DOCKER_NET_OVERLAY=y/CONFIG_DOCKER_NET_OVERLAY=n/' .config
