@@ -131,10 +131,10 @@ pushd package/community || exit
 #svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant
 #Guest-wifi
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi
-mkdir luci-app-guest-wifi
+mkdir -p luci-app-guest-wifi
 cp -rf ../../kiddin9/luci-app-guest-wifi/* luci-app-guest-wifi
 #Onliner
-mkdir luci-app-onliner
+mkdir -p luci-app-onliner
 cp -rf ../../kiddin9/luci-app-onliner/* luci-app-onliner
 #Eqos（iStoreOS已有）
 #svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-eqos
@@ -144,7 +144,7 @@ cp -rf ../../kiddin9/luci-app-onliner/* luci-app-onliner
 # mkdir luci-app-wifischedule
 # cp -rf ../../kiddin9/luci-app-wifischedule/* luci-app-wifischedule
 #RAMfree
-mkdir luci-app-ramfree
+mkdir -p luci-app-ramfree
 cp -rf ../../kiddin9/luci-app-ramfree/* luci-app-ramfree
 #ttyd（conf已有）
 # mkdir luci-app-ttyd
@@ -153,10 +153,10 @@ cp -rf ../../kiddin9/luci-app-ramfree/* luci-app-ramfree
 # mkdir luci-app-usb3disable
 # cp -rf ../../kiddin9/luci-app-usb3disable/* luci-app-usb3disable
 #NetData（系统监控）
-mkdir luci-app-netdata
+mkdir -p luci-app-netdata
 cp -rf ../../kiddin9/luci-app-netdata/* luci-app-netdata
 #rtbwmon（实时流量）
-mkdir luci-app-rtbwmon
+mkdir -p luci-app-rtbwmon
 cp -rf ../../kiddin9/luci-app-rtbwmon/* luci-app-rtbwmon
 
 # 存储相关应用
@@ -194,7 +194,7 @@ cp -rf ../../kiddin9/luci-app-rtbwmon/* luci-app-rtbwmon
 # svn export https://github.com/jerrykuku/lua-maxminddb/trunk lua-maxminddb
 # svn export https://github.com/jerrykuku/luci-app-vssr/trunk luci-app-vssr
 #OpenClash
-mkdir luci-app-openclash
+mkdir -p luci-app-openclash
 cp -rf ../../kiddin9/luci-app-openclash/* luci-app-openclash
 cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-openclash/* luci-app-openclash
 #加入OpenClash核心
@@ -209,7 +209,7 @@ cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-openclash/*
 
 # 去广告
 #ADGuardHome（kiddin9）
-mkdir luci-app-adguardhome
+mkdir -p luci-app-adguardhome
 cp -rf ../../kiddin9/luci-app-adguardhome/* luci-app-adguardhome
 cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-adguardhome/* luci-app-adguardhome
 sed -i 's/拦截DNS服务器/拦截DNS服务器（默认用户名和密码均为root）/' luci-app-adguardhome/po/zh_Hans/adguardhome.po
@@ -263,12 +263,12 @@ sed -i 's/拦截DNS服务器/拦截DNS服务器（默认用户名和密码均为
 # svn export https://github.com/destan19/OpenAppFilter/trunk OpenAppFilter
 
 # 5G通信模组拨号工具
-mkdir quectel_QMI_WWAN
+mkdir -p quectel_QMI_WWAN
 # mkdir fibocom_QMI_WWAN
 # mkdir meig_QMI_WWAN
 # mkdir tw_QMI_WWAN
-mkdir quectel_cm_5G
-mkdir quectel_MHI
+mkdir -p quectel_cm_5G
+mkdir -p quectel_MHI
 # mkdir luci-app-hypermodem
 cp -rf ../../Modem-Support/quectel_QMI_WWAN/* quectel_QMI_WWAN
 # cp -rf ../../Modem-Support/fibocom_QMI_WWAN/* fibocom_QMI_WWAN
@@ -280,8 +280,8 @@ cp -rf ../../Modem-Support/quectel_MHI/* quectel_MHI
 
 # 5G模组短信插件
 # cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
-mkdir sms-tool
-mkdir luci-app-sms-tool
+mkdir -p sms-tool
+mkdir -p luci-app-sms-tool
 cp -rf ../../Modem-Support/sms-tool/* sms-tool
 cp -rf ../../Modem-Support/luci-app-sms-tool/* luci-app-sms-tool
 cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-sms-tool/* luci-app-sms-tool
@@ -292,11 +292,11 @@ cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-sms-tool/* 
 # svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/luci-app-3ginfo
 
 # 5G模组IPv6
-mkdir ndisc
+mkdir -p ndisc
 cp -rf ../../Modem-Support/ndisc/* ndisc
 
 # 5G模组信息插件+AT工具
-mkdir luci-app-modem
+mkdir -p luci-app-modem
 cp -rf ../../Modem-Support/luci-app-modem/* luci-app-modem
 rm -rf ../../Modem-Support/luci-app-modem/po/zh_Hans #解决汉化问题
 popd
