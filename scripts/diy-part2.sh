@@ -36,6 +36,7 @@
 # sed -i 's/CONFIG_PACKAGE_ddns-scripts_aliyun=y/CONFIG_PACKAGE_ddns-scripts_aliyun=n/' .config
 # sed -i 's/CONFIG_PACKAGE_luci-app-ddns=y/CONFIG_PACKAGE_luci-app-ddns=n/' .config
 # sed -i 's/CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=y/CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=n/' .config
+
 # 移除ddnsto
 sed -i 's/CONFIG_PACKAGE_ddnsto=y/CONFIG_PACKAGE_ddnsto=n/' .config
 sed -i 's/CONFIG_PACKAGE_luci-app-ddnsto=y/CONFIG_PACKAGE_luci-app-ddnsto=n/' .config
@@ -82,38 +83,39 @@ sed -i 's/CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y/CONFIG_PACKAGE_luci-i18n-ddnst
 # 移除 bootstrap 主题
 sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootstrap=n/' .config
 
-# 解决rust编译错误（`llvm.download-ci-llvm` cannot be set to `true` on CI. Use `if-unchanged` instead.）
-echo "------------"
-find -name rust
-ls feeds/packages/lang/rust
-echo "------------"
-ls package/feeds/packages/rust
-echo "------------"
-cat feeds/packages/lang/rust/Makefile
-echo "------------"
-sed -i 's/--set=llvm.download-ci-llvm=true/--set=llvm.download-ci-llvm=if-unchanged/' feeds/packages/lang/rust/Makefile
-echo "------------"
-cat feeds/packages/lang/rust/Makefile
-echo "------------"
+# 解决 rust 编译错误（`llvm.download-ci-llvm` cannot be set to `true` on CI. Use `if-unchanged` instead.）
+# rust 这部分已经被移除
+# echo "------------"
+# find -name rust
+# ls feeds/packages/lang/rust
+# echo "------------"
+# ls package/feeds/packages/rust
+# echo "------------"
+# cat feeds/packages/lang/rust/Makefile
+# echo "------------"
+# sed -i 's/--set=llvm.download-ci-llvm=true/--set=llvm.download-ci-llvm=if-unchanged/' feeds/packages/lang/rust/Makefile
+# echo "------------"
+# cat feeds/packages/lang/rust/Makefile
+# echo "------------"
 
 # 添加第三方应用
-mkdir kiddin9
-pushd kiddin9
+mkdir -p kiddin9
+pushd kiddin9 || exit
 git clone --depth=1 https://github.com/kiddin9/kwrt-packages .
-popd
+popd || exit
 
-mkdir Modem-Support
-pushd Modem-Support
+mkdir -p Modem-Support
+pushd Modem-Support || exit
 git clone --depth=1 https://github.com/Siriling/5G-Modem-Support .
-popd
+popd || exit
 
-mkdir MyConfig
-pushd MyConfig
+mkdir -p MyConfig
+pushd MyConfig || exit
 git clone --depth=1 https://github.com/Siriling/OpenWRT-MyConfig .
-popd
+popd || exit
 
-mkdir package/community
-pushd package/community
+mkdir -p package/community
+pushd package/community || exit
 
 # 系统相关应用
 #Cpufreq（conf已有）
@@ -153,7 +155,7 @@ cp -rf ../../kiddin9/luci-app-ramfree/* luci-app-ramfree
 #NetData（系统监控）
 mkdir luci-app-netdata
 cp -rf ../../kiddin9/luci-app-netdata/* luci-app-netdata
-#rtbwmon（实施流量）
+#rtbwmon（实时流量）
 mkdir luci-app-rtbwmon
 cp -rf ../../kiddin9/luci-app-rtbwmon/* luci-app-rtbwmon
 
@@ -196,13 +198,13 @@ mkdir luci-app-openclash
 cp -rf ../../kiddin9/luci-app-openclash/* luci-app-openclash
 cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-openclash/* luci-app-openclash
 #加入OpenClash核心
-chmod -R a+x $GITHUB_WORKSPACE/scripts/preset-clash-core.sh
+chmod -R a+x "$GITHUB_WORKSPACE"/scripts/preset-clash-core.sh
 if [ "$1" = "rk33xx" ]; then
-	$GITHUB_WORKSPACE/scripts/preset-clash-core.sh arm64
+    "$GITHUB_WORKSPACE"/scripts/preset-clash-core.sh arm64
 elif [ "$1" = "rk35xx" ]; then
-	$GITHUB_WORKSPACE/scripts/preset-clash-core.sh arm64
+    "$GITHUB_WORKSPACE"/scripts/preset-clash-core.sh arm64
 elif [ "$1" = "x86" ]; then
-	$GITHUB_WORKSPACE/scripts/preset-clash-core.sh amd64
+    "$GITHUB_WORKSPACE"/scripts/preset-clash-core.sh amd64
 fi
 
 # 去广告
@@ -306,6 +308,7 @@ popd
 
 # 添加第三方应用
 # 系统相关应用
+# shellcheck disable=SC2129
 echo "
 CONFIG_PACKAGE_luci-app-poweroff=y
 CONFIG_PACKAGE_luci-app-fileassistant=y
@@ -318,12 +321,12 @@ CONFIG_PACKAGE_luci-app-ramfree=y
 # CONFIG_PACKAGE_luci-app-usb3disable=y
 CONFIG_PACKAGE_luci-app-luci-app-netdata=y
 CONFIG_PACKAGE_luci-app-luci-app-rtbwmon=y
-" >> .config
+" >>.config
 
 # 存储相关应用
 echo "
 # CONFIG_PACKAGE_luci-app-gowebdav=y
-" >> .config
+" >>.config
 
 # 科学上网和代理应用
 echo "
@@ -389,15 +392,15 @@ echo "
 # CONFIG_PACKAGE_luci-app-vssr_INCLUDE_ShadowsocksR_Server=y
 
 #Openclash
-CONFIG_PACKAGE_luci-app-openclash=y
-" >> .config
+# CONFIG_PACKAGE_luci-app-openclash=y
+" >>.config
 
 # 去广告应用
 echo "
 # CONFIG_PACKAGE_luci-app-adguardhome=y
 # CONFIG_PACKAGE_luci-app-dnsfilter=y
 # CONFIG_PACKAGE_luci-app-ikoolproxy=y
-" >> .config
+" >>.config
 
 # docker应用
 echo "
@@ -411,7 +414,7 @@ echo "
 # CONFIG_PACKAGE_luci-app-familycloud=y
 # CONFIG_PACKAGE_luci-app-kodexplorer=y
 # CONFIG_PACKAGE_luci-app-rclone=y
-" >> .config
+" >>.config
 
 # 局域网分享应用
 echo "
@@ -422,7 +425,7 @@ echo "
 # CONFIG_PACKAGE_luci-app-mjpg-streamer=y
 # CONFIG_PACKAGE_luci-app-ps3netsrv=y
 # CONFIG_PACKAGE_luci-app-usb-printer=y
-" >> .config
+" >>.config
 
 # VPN服务器
 echo "
@@ -432,19 +435,19 @@ echo "
 # CONFIG_PACKAGE_luci-app-openvpn-server=y
 # CONFIG_PACKAGE_luci-app-pptp-server=y
 # CONFIG_PACKAGE_luci-app-softethervpn=y
-" >> .config
+" >>.config
 
 # DNS
 echo "
 # CONFIG_PACKAGE_luci-app-mosdns=y
 # CONFIG_PACKAGE_luci-app-smartdns=y
-" >> .config
+" >>.config
 
 # DDNS
 echo "
 # CONFIG_PACKAGE_luci-app-aliddns=y
 # CONFIG_PACKAGE_luci-app-tencentddns=y
-" >> .config
+" >>.config
 
 # 内网穿透
 echo "
@@ -453,17 +456,17 @@ echo "
 # CONFIG_PACKAGE_luci-app-frps=y
 # CONFIG_PACKAGE_luci-app-nps=y
 # CONFIG_PACKAGE_luci-app-n2n_v2=y
-" >> .config
+" >>.config
 
 # 其他
 echo "
 # CONFIG_PACKAGE_luci-app-pushbot=y
-CONFIG_PACKAGE_luci-app-socat=y
+# CONFIG_PACKAGE_luci-app-socat=y
 # CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
 # CONFIG_PACKAGE_luci-app-uugamebooster=y
 # CONFIG_PACKAGE_luci-app-xlnetacc=y
 # CONFIG_PACKAGE_luci-udptools=y
-" >> .config
+" >>.config
 
 #补充网卡
 echo "
@@ -476,7 +479,7 @@ CONFIG_PACKAGE_ath10k-board-qca9984=y
 CONFIG_PACKAGE_ath10k-firmware-qca9888=y
 CONFIG_PACKAGE_ath10k-firmware-qca988x=y
 CONFIG_PACKAGE_ath10k-firmware-qca9984=y
-" >> .config
+" >>.config
 
 #5G相关
 echo "
@@ -493,9 +496,9 @@ CONFIG_PACKAGE_luci-app-sms-tool=y
 # 5G模组信息插件+AT工具
 # CONFIG_PACKAGE_luci-app-cpe=y
 # CONFIG_PACKAGE_sendat=y
-CONFIG_PACKAGE_sms-tool=y
-CONFIG_PACKAGE_luci-app-modem=y
-CONFIG_PACKAGE_kmod-qmi_wwan_q=y
+# CONFIG_PACKAGE_sms-tool=y
+# CONFIG_PACKAGE_luci-app-modem=y
+# CONFIG_PACKAGE_kmod-qmi_wwan_q=y
 # CONFIG_PACKAGE_kmod-qmi_wwan_f=y
 # CONFIG_PACKAGE_kmod-qmi_wwan_m=y
 # CONFIG_PACKAGE_kmod-qmi_wwan_t=y
@@ -517,10 +520,10 @@ CONFIG_PACKAGE_minicom=y
 # 脚本拨号工具依赖
 CONFIG_PACKAGE_procps-ng=y
 CONFIG_PACKAGE_procps-ng-ps=y
-" >> .config
+" >>.config
 
 # 额外组件
 echo "
 CONFIG_GRUB_IMAGES=y
 CONFIG_VMDK_IMAGES=y
-" >> .config
+" >>.config
