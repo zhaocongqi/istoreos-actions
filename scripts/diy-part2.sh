@@ -527,3 +527,12 @@ echo "
 CONFIG_GRUB_IMAGES=y
 CONFIG_VMDK_IMAGES=y
 " >>.config
+
+# 关闭docker
+sed -i 's/CONFIG_PACKAGE_containerd=y/CONFIG_PACKAGE_containerd=n/' .config
+sed -i 's/CONFIG_PACKAGE_docker=y/CONFIG_PACKAGE_docker=n/' .config
+sed -i 's/CONFIG_PACKAGE_dockerd=y/CONFIG_PACKAGE_dockerd=n/' .config
+sed -i 's/CONFIG_DOCKER_NET_ENCRYPT=y/CONFIG_DOCKER_NET_ENCRYPT=n/' .config
+sed -i 's/CONFIG_DOCKER_NET_MACVLAN=y/CONFIG_DOCKER_NET_MACVLAN=n/' .config
+sed -i 's/CONFIG_DOCKER_NET_OVERLAY=y/CONFIG_DOCKER_NET_OVERLAY=n/' .config
+sed -i 's/CONFIG_DOCKER_NET_TFTP=y/CONFIG_DOCKER_NET_TFTP=n/' .config
