@@ -311,7 +311,7 @@ popd
 # shellcheck disable=SC2129
 echo "
 CONFIG_PACKAGE_luci-app-poweroff=y
-CONFIG_PACKAGE_luci-app-fileassistant=y
+# CONFIG_PACKAGE_luci-app-fileassistant=y
 # CONFIG_PACKAGE_luci-app-guest-wifi=y
 CONFIG_PACKAGE_luci-app-onliner=y
 CONFIG_PACKAGE_luci-app-eqos=y
@@ -538,3 +538,34 @@ sed -i 's/CONFIG_DOCKER_NET_ENCRYPT=y/CONFIG_DOCKER_NET_ENCRYPT=n/' .config
 sed -i 's/CONFIG_DOCKER_NET_MACVLAN=y/CONFIG_DOCKER_NET_MACVLAN=n/' .config
 sed -i 's/CONFIG_DOCKER_NET_OVERLAY=y/CONFIG_DOCKER_NET_OVERLAY=n/' .config
 sed -i 's/CONFIG_DOCKER_NET_TFTP=y/CONFIG_DOCKER_NET_TFTP=n/' .config
+
+# 关闭文件助手
+sed -i 's/CONFIG_PACKAGE_luci-app-fileassistant=y/CONFIG_PACKAGE_luci-app-fileassistant=n/' .config
+
+# 关闭统一文件共享（Unishare）
+sed -i 's/CONFIG_PACKAGE_unishare=y/CONFIG_PACKAGE_unishare=n/' .config
+sed -i 's/CONFIG_PACKAGE_luci-app-unishare=y/CONFIG_PACKAGE_luci-app-unishare=n/' .config
+sed -i 's/CONFIG_PACKAGE_luci-i18n-unishare-zh-cn=y/CONFIG_PACKAGE_luci-i18n-unishare-zh-cn=n/' .config
+
+# 关闭 服务/网络共享
+sed -i 's/CONFIG_PACKAGE_samba4-libs=y/CONFIG_PACKAGE_samba4-libs=n/' .config
+sed -i 's/CONFIG_PACKAGE_samba4-server=y/CONFIG_PACKAGE_samba4-server=n/' .config
+sed -i 's/CONFIG_PACKAGE_luci-app-samba4=y/CONFIG_PACKAGE_luci-app-samba4=n/' .config
+sed -i 's/CONFIG_PACKAGE_luci-i18n-samba4-zh-cn=y/CONFIG_PACKAGE_luci-i18n-samba4-zh-cn=n/' .config
+
+# 关闭 网络存储/挂载网络共享
+sed -i 's/CONFIG_PACKAGE_cifsmount=y/CONFIG_PACKAGE_cifsmount=n/' .config
+sed -i 's/CONFIG_PACKAGE_luci-app-cifs-mount=y/CONFIG_PACKAGE_luci-app-cifs-mount=n/' .config
+sed -i 's/CONFIG_PACKAGE_luci-i18n-cifs-mount-zh-cn=y/CONFIG_PACKAGE_luci-i18n-cifs-mount-zh-cn=n/' .config
+
+# 关闭 NFS 管理
+sed -i 's/CONFIG_PACKAGE_nfs-kernel-server=y/CONFIG_PACKAGE_nfs-kernel-server=n/' .config
+sed -i 's/CONFIG_PACKAGE_luci-app-nfs=y/CONFIG_PACKAGE_luci-app-nfs=n/' .config
+sed -i 's/CONFIG_PACKAGE_luci-i18n-nfs-zh-cn=y/CONFIG_PACKAGE_luci-i18n-nfs-zh-cn=n/' .config
+
+# 关闭磁盘阵列（mdadm / RAID）
+sed -i 's/CONFIG_PACKAGE_mdadm=y/CONFIG_PACKAGE_mdadm=n/' .config
+
+# 关闭 SMART 监控
+sed -i 's/CONFIG_PACKAGE_smartmontools=y/CONFIG_PACKAGE_smartmontools=n/' .config
+sed -i 's/CONFIG_PACKAGE_smartd=y/CONFIG_PACKAGE_smartd=n/' .config
