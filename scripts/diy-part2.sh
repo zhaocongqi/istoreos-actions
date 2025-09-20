@@ -487,7 +487,7 @@ echo "
 # CONFIG_PACKAGE_ext-rooter-basic=y
 
 # 5G模组短信插件
-CONFIG_PACKAGE_luci-app-sms-tool=y
+# CONFIG_PACKAGE_luci-app-sms-tool=y
 
 # 5G模组信息插件
 # CONFIG_PACKAGE_luci-app-3ginfo-lite=y
@@ -518,8 +518,8 @@ CONFIG_PACKAGE_luci-app-sms-tool=y
 CONFIG_PACKAGE_minicom=y
 
 # 脚本拨号工具依赖
-CONFIG_PACKAGE_procps-ng=y
-CONFIG_PACKAGE_procps-ng-ps=y
+# CONFIG_PACKAGE_procps-ng=y
+# CONFIG_PACKAGE_procps-ng-ps=y
 " >>.config
 
 # 额外组件
