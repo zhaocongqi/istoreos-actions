@@ -563,13 +563,11 @@ sed -i 's/CONFIG_PACKAGE_nfs-kernel-server=y/CONFIG_PACKAGE_nfs-kernel-server=n/
 sed -i 's/CONFIG_PACKAGE_luci-app-nfs=y/CONFIG_PACKAGE_luci-app-nfs=n/' .config
 sed -i 's/CONFIG_PACKAGE_luci-i18n-nfs-zh-cn=y/CONFIG_PACKAGE_luci-i18n-nfs-zh-cn=n/' .config
 
-# 关闭磁盘阵列（mdadm / RAID）
-sed -i 's/CONFIG_PACKAGE_mdadm=y/CONFIG_PACKAGE_mdadm=n/' .config
+# 关闭磁盘阵列（SMART 监控 / RAID）
 sed -i 's/CONFIG_PACKAGE_luci-app-diskman=y/CONFIG_PACKAGE_luci-app-diskman=n/' .config
 sed -i 's/CONFIG_PACKAGE_luci-app-diskman_INCLUDE_btrfs_progs=y/CONFIG_PACKAGE_luci-app-diskman_INCLUDE_btrfs_progs=n/' .config
 sed -i 's/CONFIG_PACKAGE_luci-app-diskman_INCLUDE_lsblk=y/CONFIG_PACKAGE_luci-app-diskman_INCLUDE_lsblk=n/' .configs
 sed -i 's/CONFIG_PACKAGE_luci-i18n-diskman-zh-cn=y/CONFIG_PACKAGE_luci-i18n-diskman-zh-cn=n/' .config
-
-# 关闭 SMART 监控
+sed -i 's/CONFIG_PACKAGE_mdadm=y/CONFIG_PACKAGE_mdadm=n/' .config
 sed -i 's/CONFIG_PACKAGE_smartmontools=y/CONFIG_PACKAGE_smartmontools=n/' .config
 sed -i 's/CONFIG_PACKAGE_smartd=y/CONFIG_PACKAGE_smartd=n/' .config
