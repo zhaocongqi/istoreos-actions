@@ -576,3 +576,10 @@ sed -i 's/CONFIG_PACKAGE_smartd=y/CONFIG_PACKAGE_smartd=n/' .config
 sed -i 's/CONFIG_PACKAGE_linkease=y/CONFIG_PACKAGE_linkease=n/' .config
 sed -i 's/CONFIG_PACKAGE_luci-app-linkease=y/CONFIG_PACKAGE_luci-app-linkease=n/' .config
 sed -i 's/CONFIG_PACKAGE_luci-i18n-linkease-zh-cn=y/CONFIG_PACKAGE_luci-i18n-linkease-zh-cn=n/' .config
+
+# 移除磁盘阵列（SMART 监控 / RAID）Web UI
+QuickStart_Lua="feeds/linkease_nas_luci/luci/luci-app-quickstart/luasrc/controller/quickstart.lua"
+if [ -f "$QuickStart_Lua" ]; then
+	# 删除包含 "entry({"admin", "nas"" 的行
+	sed -i '/entry({\"admin\", \"nas\"/d' "$QuickStart_Lua"
+fi
