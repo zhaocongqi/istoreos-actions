@@ -571,3 +571,8 @@ sed -i 's/CONFIG_PACKAGE_luci-i18n-diskman-zh-cn=y/CONFIG_PACKAGE_luci-i18n-disk
 sed -i 's/CONFIG_PACKAGE_mdadm=y/CONFIG_PACKAGE_mdadm=n/' .config
 sed -i 's/CONFIG_PACKAGE_smartmontools=y/CONFIG_PACKAGE_smartmontools=n/' .config
 sed -i 's/CONFIG_PACKAGE_smartd=y/CONFIG_PACKAGE_smartd=n/' .config
+
+# 关闭易有云文件管理器
+sed -i 's/CONFIG_PACKAGE_linkease=y/CONFIG_PACKAGE_linkease=n/' .config
+sed -i 's/CONFIG_PACKAGE_luci-app-linkease=y/CONFIG_PACKAGE_luci-app-linkease=n/' .config
+sed -i 's/CONFIG_PACKAGE_luci-i18n-linkease-zh-cn=y/CONFIG_PACKAGE_luci-i18n-linkease-zh-cn=n/' .config
