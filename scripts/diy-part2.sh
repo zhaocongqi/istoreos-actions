@@ -299,7 +299,7 @@ cp -rf ../../Modem-Support/ndisc/* ndisc
 mkdir -p luci-app-modem
 cp -rf ../../Modem-Support/luci-app-modem/* luci-app-modem
 rm -rf ../../Modem-Support/luci-app-modem/po/zh_Hans #解决汉化问题
-popd
+popd || exit
 
 # 5G模组拨号脚本
 # mkdir -p package/base-files/files/root/5GModem
