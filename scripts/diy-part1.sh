@@ -22,11 +22,11 @@
 # echo 'src-git mosdns https://github.com/sbwml/luci-app-mosdns' >>feeds.conf.default
 # echo 'src-git kiddin9 https://github.com/kiddin9/kwrt-packages' >>feeds.conf
 
-# (
-# 	echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main"
-# 	echo "src-git passwall_luci https://github.com/xiaorouji/openwrt-passwall.git;main"
-# 	cat feeds.conf.default
-# ) >feeds.conf.default.new && mv feeds.conf.default.new feeds.conf.default
+(
+	echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main"
+	echo "src-git passwall_luci https://github.com/xiaorouji/openwrt-passwall.git;main"
+	cat feeds.conf.default
+) >feeds.conf.default.new && mv feeds.conf.default.new feeds.conf.default
 
-echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >>feeds.conf.default
-echo "src-git passwall_luci https://github.com/xiaorouji/openwrt-passwall.git;main" >>feeds.conf.default
+# echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >>feeds.conf.default
+# echo "src-git passwall_luci https://github.com/xiaorouji/openwrt-passwall.git;main" >>feeds.conf.default

@@ -361,11 +361,16 @@ echo "
 #Passwall和Passwall2
 # CONFIG_PACKAGE_luci-app-passwall2=y
 CONFIG_PACKAGE_luci-app-passwall=y
-CONFIG_PACKAGE_luci-app-passwall_Iptables_Transparent_Proxy=n
+
+
+CONFIG_PACKAGE_luci-app-passwall_Iptables_Transparent_Proxy=y
 CONFIG_PACKAGE_luci-app-passwall_Nftables_Transparent_Proxy=n
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Geoview=n
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy=n
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria=n
+CONFIG_PACKAGE_geoview=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Geoview=y
+CONFIG_PACKAGE_haproxy=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy=y
+CONFIG_PACKAGE_hysteria=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_NaiveProxy=n
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Client=n
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Server=n
@@ -375,13 +380,15 @@ CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Client=n
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Server=n
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadow_TLS=n
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs=n
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_SingBox=n
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_SingBox=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_Plus=n
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_tuic_client=n
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Geodata=n
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin=n
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=n
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray_Plugin=n
+CONFIG_PACKAGE_xray-core=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
+CONFIG_PACKAGE_xray-plugin=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray_Plugin=y
 
 #VSSR（HelloWord）
 # CONFIG_PACKAGE_luci-app-vssr=y
