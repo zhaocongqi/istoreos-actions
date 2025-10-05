@@ -365,8 +365,8 @@ CONFIG_PACKAGE_luci-app-passwall=y
 
 CONFIG_PACKAGE_luci-app-passwall_Iptables_Transparent_Proxy=y
 CONFIG_PACKAGE_luci-app-passwall_Nftables_Transparent_Proxy=n
-CONFIG_PACKAGE_geoview=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Geoview=y
+CONFIG_PACKAGE_geoview=n
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Geoview=n
 CONFIG_PACKAGE_haproxy=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy=y
 CONFIG_PACKAGE_hysteria=y
