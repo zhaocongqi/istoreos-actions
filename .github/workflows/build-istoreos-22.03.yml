@@ -76,10 +76,10 @@ jobs:
           echo "------------------------------- 磁盘详情 -------------------------------\n"
           df -Th
 
-      - name: 安装 Go 1.22.6
-        uses: actions/setup-go@v5
-        with:
-          go-version: 1.22.6
+      # - name: 安装 Go 1.22.6
+      #   uses: actions/setup-go@v5
+      #   with:
+      #     go-version: 1.22.6
 
       - name: 初始化编译环境
         env:
@@ -132,6 +132,12 @@ jobs:
 
       - name: 安装 feeds
         run: cd openwrt && ./scripts/feeds install -a
+
+      - name: 更新 golang 版本
+        run: |
+          cd openwrt
+          rm -rf feeds/packages/lang/golang
+          git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
 
       - name: 加载自定义配置
         env:
