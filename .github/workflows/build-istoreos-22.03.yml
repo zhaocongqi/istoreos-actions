@@ -12,11 +12,6 @@ on:
         description: "设置系统名称"
         required: true
         default: "iStore OS"
-      enable_wifi:
-        description: "启用WiFi"
-        required: true
-        default: false
-        type: boolean
       ssh:
         description: "SSH connection to Actions"
         required: false
@@ -76,11 +71,6 @@ jobs:
           echo "------------------------------- 磁盘详情 -------------------------------\n"
           df -Th
 
-      # - name: 安装 Go 1.22.6
-      #   uses: actions/setup-go@v5
-      #   with:
-      #     go-version: 1.22.6
-
       - name: 初始化编译环境
         env:
           DEBIAN_FRONTEND: noninteractive
@@ -110,6 +100,14 @@ jobs:
           df -hT $PWD
           git clone $REPO_URL -b ${{ matrix.REPO_BRANCH }} openwrt
           ln -sf /mnt/workdir/openwrt $GITHUB_WORKSPACE/openwrt
+
+      - name: 加载应用配置文件
+        working-directory: /mnt/workdir
+        run: |
+          git clone https://${{ env.GITHUB_TOKEN }}@github.com/zhaocongqi/scripts.git
+          mkdir -p $GITHUB_WORKSPACE/files/etc/config
+          cp /mnt/workdir/scripts/openwrt/passwall/passwall $GITHUB_WORKSPACE/files/etc/config/passwall
+          cp /mnt/workdir/scripts/openwrt/smartdns/smartdns $GITHUB_WORKSPACE/files/etc/config/smartdns
 
       - name: 缓存构建动作
         uses: klever1988/cachewrtbuild@main
@@ -170,12 +168,6 @@ jobs:
           sed -i "s/OpenWrt/${set_os_name}/g" package/base-files/files/bin/config_generate
           echo "Set OS name : ${set_os_name}"
 
-      - name: 启用WiFi
-        if: github.event.inputs.enable_wifi == 'true'
-        run: |
-          cd openwrt
-          sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-
       - name: SSH 连接到 Actions
         uses: P3TERX/ssh2actions@v1.0.0
         if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
@@ -209,7 +201,7 @@ jobs:
         uses: actions/upload-artifact@main
         if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
         with:
-          name: OpenWrt_bin${{ env.FILE_DATE }}
+          name: OpenWrt_bin_${{ matrix.ARCHITECTURE }}${{ env.FILE_DATE }}
           path: openwrt/bin
 
       - name: 整理固件文件
@@ -225,7 +217,7 @@ jobs:
         uses: actions/upload-artifact@main
         if: steps.organize.outputs.status == 'success' && !cancelled()
         with:
-          name: OpenWrt_firmware${{ env.FILE_DATE }}
+          name: OpenWrt_firmware_${{ matrix.ARCHITECTURE }}${{ env.FILE_DATE }}
           path: ${{ env.FIRMWARE }}
 
       - name: 生成发布标签

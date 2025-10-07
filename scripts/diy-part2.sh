@@ -25,9 +25,6 @@
 # 默认打开WiFi
 # sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
-#添加设备
-# $GITHUB_WORKSPACE/scripts/add-device.sh
-
 # 移除ddns
 sed -i 's/CONFIG_PACKAGE_ddns-scripts=y/CONFIG_PACKAGE_ddns-scripts=n/' .config
 sed -i 's/CONFIG_PACKAGE_ddns-scripts-cloudflare=y/CONFIG_PACKAGE_ddns-scripts-cloudflare=n/' .config
@@ -131,8 +128,8 @@ pushd package/community || exit
 #svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant
 #Guest-wifi
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi
-mkdir -p luci-app-guest-wifi
-cp -rf ../../kiddin9/luci-app-guest-wifi/* luci-app-guest-wifi
+# mkdir -p luci-app-guest-wifi
+# cp -rf ../../kiddin9/luci-app-guest-wifi/* luci-app-guest-wifi
 #Onliner
 mkdir -p luci-app-onliner
 cp -rf ../../kiddin9/luci-app-onliner/* luci-app-onliner
@@ -195,19 +192,6 @@ cp -rf ../../kiddin9/luci-app-rtbwmon/* luci-app-rtbwmon
 #VSSR（Hello Word）
 # svn export https://github.com/jerrykuku/lua-maxminddb/trunk lua-maxminddb
 # svn export https://github.com/jerrykuku/luci-app-vssr/trunk luci-app-vssr
-#OpenClash
-mkdir -p luci-app-openclash
-cp -rf ../../kiddin9/luci-app-openclash/* luci-app-openclash
-cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-openclash/* luci-app-openclash
-#加入OpenClash核心
-# chmod -R a+x "$GITHUB_WORKSPACE"/scripts/preset-clash-core.sh
-# if [ "$1" = "rk33xx" ]; then
-#     "$GITHUB_WORKSPACE"/scripts/preset-clash-core.sh arm64
-# elif [ "$1" = "rk35xx" ]; then
-#     "$GITHUB_WORKSPACE"/scripts/preset-clash-core.sh arm64
-# elif [ "$1" = "x86" ]; then
-#     "$GITHUB_WORKSPACE"/scripts/preset-clash-core.sh amd64
-# fi
 
 # 去广告
 #ADGuardHome（kiddin9）
@@ -264,49 +248,7 @@ sed -i 's/拦截DNS服务器/拦截DNS服务器（默认用户名和密码均为
 #OpenAppFilter（conf已有）
 # svn export https://github.com/destan19/OpenAppFilter/trunk OpenAppFilter
 
-# 5G通信模组拨号工具
-mkdir -p quectel_QMI_WWAN
-# mkdir fibocom_QMI_WWAN
-# mkdir meig_QMI_WWAN
-# mkdir tw_QMI_WWAN
-mkdir -p quectel_cm_5G
-mkdir -p quectel_MHI
-# mkdir luci-app-hypermodem
-cp -rf ../../Modem-Support/quectel_QMI_WWAN/* quectel_QMI_WWAN
-# cp -rf ../../Modem-Support/fibocom_QMI_WWAN/* fibocom_QMI_WWAN
-# cp -rf ../../Modem-Support/meig_QMI_WWAN/* meig_QMI_WWAN
-# cp -rf ../../Modem-Support/tw_QMI_WWAN/* tw_QMI_WWAN
-cp -rf ../../Modem-Support/quectel_cm_5G/* quectel_cm_5G
-cp -rf ../../Modem-Support/quectel_MHI/* quectel_MHI
-# cp -rf ../../Modem-Support/luci-app-hypermodem/* luci-app-hypermodem
-
-# 5G模组短信插件
-# cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
-mkdir -p sms-tool
-mkdir -p luci-app-sms-tool
-cp -rf ../../Modem-Support/sms-tool/* sms-tool
-cp -rf ../../Modem-Support/luci-app-sms-tool/* luci-app-sms-tool
-cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-sms-tool/* luci-app-sms-tool
-
-# 5G模组信息插件
-# svn export https://github.com/qiuweichao/luci-app-modem-info/trunk/luci-app-3ginfo-lite
-# svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/3ginfo
-# svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/luci-app-3ginfo
-
-# 5G模组IPv6
-mkdir -p ndisc
-cp -rf ../../Modem-Support/ndisc/* ndisc
-
-# 5G模组信息插件+AT工具
-mkdir -p luci-app-modem
-cp -rf ../../Modem-Support/luci-app-modem/* luci-app-modem
-rm -rf ../../Modem-Support/luci-app-modem/po/zh_Hans #解决汉化问题
 popd || exit
-
-# 5G模组拨号脚本
-# mkdir -p package/base-files/files/root/5GModem
-# cp -rf $GITHUB_WORKSPACE/tools/5G模组拨号脚本/5GModem/* package/base-files/files/root/5GModem
-# echo -e "#* * * * * bash /root/5GModem/5g_crontab.sh" >> package/istoreos-files/files/etc/crontabs/root
 
 # 添加第三方应用
 # 系统相关应用
@@ -381,10 +323,10 @@ CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Server=n
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadow_TLS=n
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs=n
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_SingBox=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_Plus=n
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_tuic_client=n
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Geodata=n
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin=n
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_Plus=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_tuic_client=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Geodata=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin=y
 CONFIG_PACKAGE_xray-core=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
 CONFIG_PACKAGE_xray-plugin=y
