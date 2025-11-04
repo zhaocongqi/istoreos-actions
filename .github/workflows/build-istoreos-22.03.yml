@@ -106,7 +106,8 @@ jobs:
         run: |
           git clone https://${{ env.GITHUB_TOKEN }}@github.com/zhaocongqi/scripts.git
           mkdir -p $GITHUB_WORKSPACE/files/etc/config
-          cp /mnt/workdir/scripts/openwrt/passwall/passwall $GITHUB_WORKSPACE/files/etc/config/passwall
+          cp -r /mnt/workdir/scripts/openwrt/passwall/etc/config/ $GITHUB_WORKSPACE/files/etc/config/
+          cp -r /mnt/workdir/scripts/openwrt/passwall/usr/share/passwall/rules/ $GITHUB_WORKSPACE/files/usr/share/passwall/rules/
           cp /mnt/workdir/scripts/openwrt/smartdns/smartdns $GITHUB_WORKSPACE/files/etc/config/smartdns
 
       - name: 缓存构建动作
