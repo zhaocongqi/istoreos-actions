@@ -106,6 +106,7 @@ jobs:
         run: |
           git clone https://${{ env.GITHUB_TOKEN }}@github.com/zhaocongqi/scripts.git
           mkdir -p $GITHUB_WORKSPACE/files/etc/config
+          mkdir -p $GITHUB_WORKSPACE/files/usr/share/passwall/rules
           cp -r /mnt/workdir/scripts/openwrt/passwall/etc/config/ $GITHUB_WORKSPACE/files/etc/config/
           cp -r /mnt/workdir/scripts/openwrt/passwall/usr/share/passwall/rules/ $GITHUB_WORKSPACE/files/usr/share/passwall/rules/
           cp /mnt/workdir/scripts/openwrt/smartdns/smartdns $GITHUB_WORKSPACE/files/etc/config/smartdns
